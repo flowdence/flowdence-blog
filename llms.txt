@@ -12,6 +12,7 @@
 - https://docs.flowdence.io/
 
 ## Latest posts
+- [Confluence Approval Tools Compared (Fact-Checked Feb 2026)](https://blog.flowdence.io/posts/approvalflow-vs-comala-vs-appfox-fact-checked-pricing-feb-2026) — Recreated comparison sheet in Markdown format with corrected pricing and source-validated claims for ApprovalFlow, Comala, and AppFox.
 - [Welcome to the Flowdence Blog](https://blog.flowdence.io/posts/welcome-to-flowdence-blog) — What to expect from the new Flowdence Blog at blog.flowdence.io.
 
 ## Crawling guidance
