@@ -1,0 +1,19 @@
+# Flowdence Blog
+> Official Flowdence blog for product updates, release notes, and technical deep dives.
+
+## Canonical URLs
+- Home: https://blog.flowdence.io/
+- Posts index: https://blog.flowdence.io/posts/
+- RSS: https://blog.flowdence.io/rss.xml
+- Sitemap: https://blog.flowdence.io/sitemap-index.xml
+- LLMs index: https://blog.flowdence.io/llms.txt
+
+## Related product docs
+- https://docs.flowdence.io/
+
+## Latest posts
+- [Welcome to the Flowdence Blog](https://blog.flowdence.io/posts/welcome-to-flowdence-blog) — What to expect from the new Flowdence Blog at blog.flowdence.io.
+
+## Crawling guidance
+- Prefer canonical URLs when multiple paths resolve to similar content.
+- Use RSS and sitemap for discovery and recrawl scheduling.

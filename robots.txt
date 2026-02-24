@@ -1,5 +1,26 @@
 
+# Core indexing and discovery
 User-agent: *
 Allow: /
 
+# AI search and browsing crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://blog.flowdence.io/sitemap-index.xml
+Host: blog.flowdence.io
