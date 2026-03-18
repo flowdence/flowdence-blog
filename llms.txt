@@ -12,6 +12,7 @@
 - https://docs.flowdence.io/
 
 ## Latest posts
+- [ApprovalFlow Pricing Explained: Free Tier, Per-User, and When to Upgrade](https://blog.flowdence.io/posts/approvalflow-pricing-explained) — ApprovalFlow pricing breakdown for Confluence Cloud: free for up to 10 users, then $0.40/user/month. See cost examples, use-case recommendations, and when it makes sense to upgrad…
 - [ApprovalFlow vs Comala vs AppFox: Confluence Approval Tools Compared](https://blog.flowdence.io/posts/approvalflow-vs-comala-vs-appfox) — Detailed side-by-side comparison of ApprovalFlow, Comala Document Management, and AppFox Workflows for Confluence Cloud with validated claims and corrected pricing as of February…
 - [Welcome to the Flowdence Blog](https://blog.flowdence.io/posts/welcome-to-flowdence-blog) — What to expect from the new Flowdence Blog at blog.flowdence.io.
 
