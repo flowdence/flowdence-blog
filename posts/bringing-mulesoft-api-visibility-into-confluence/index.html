@@ -1,0 +1,559 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="scroll-smooth"> <head><script async src="https://www.googletagmanager.com/gtag/js?id=G-4SQGS73YLV"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4SQGS73YLV");
+    </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="icon" type="image/png" href="/images/flowdence-icon.png"><link rel="apple-touch-icon" href="/images/flowdence-icon.png"><link rel="canonical" href="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/"><link rel="alternate" hreflang="en" href="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/"><link rel="alternate" hreflang="x-default" href="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/"><meta name="generator" content="Astro v5.17.3"><!-- Load Font --><style>@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-de078a87b11e4a86","Google Sans Code-de078a87b11e4a86 fallback: Courier New",monospace;}</style><!-- General Meta Tags --><title>Bringing MuleSoft API Visibility into Confluence | Flowdence Blog</title><meta name="title" content="Bringing MuleSoft API Visibility into Confluence | Flowdence Blog"><meta name="description" content="MuleSoft API visibility is often locked behind Anypoint Platform access. MuleSight brings live API status, environment data, and security posture directly into Confluence — where the rest of your organization already works."><meta name="author" content="Flowdence"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:site_name" content="Flowdence Blog"><meta property="og:locale" content="en_US"><meta property="og:title" content="Bringing MuleSoft API Visibility into Confluence | Flowdence Blog"><meta property="og:description" content="MuleSoft API visibility is often locked behind Anypoint Platform access. MuleSight brings live API status, environment data, and security posture directly into Confluence — where the rest of your organization already works."><meta property="og:url" content="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/"><meta property="og:image" content="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/index.png"><meta property="og:image:alt" content="Bringing MuleSoft API Visibility into Confluence | Flowdence Blog - Flowdence"><!-- Article Published/Modified time --><meta property="article:published_time" content="2026-03-18T00:00:00.000Z"><meta property="article:modified_time" content="2026-03-18T00:00:00.000Z"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/"><meta name="twitter:title" content="Bringing MuleSoft API Visibility into Confluence | Flowdence Blog"><meta name="twitter:description" content="MuleSoft API visibility is often locked behind Anypoint Platform access. MuleSight brings live API status, environment data, and security posture directly into Confluence — where the rest of your organization already works."><meta name="twitter:image" content="https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Flowdence","url":"https://blog.flowdence.io/","logo":"https://blog.flowdence.io/images/flowdence-icon.png","sameAs":["https://flowdence.io/","https://www.youtube.com/@flowdence","https://x.com/flowdenceio","https://www.linkedin.com/company/flowdence"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@flowdence.io","url":"https://flowdence.io/"}]},{"@context":"https://schema.org","@type":"WebSite","name":"Flowdence Blog","url":"https://blog.flowdence.io/","description":"Product updates, engineering notes, and release stories from the Flowdence team.","publisher":{"@type":"Organization","name":"Flowdence"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":"https://blog.flowdence.io/search/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bringing MuleSoft API Visibility into Confluence","description":"MuleSoft API visibility is often locked behind Anypoint Platform access. MuleSight brings live API status, environment data, and security posture directly into Confluence — where the rest of your organization already works.","image":["https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/index.png"],"mainEntityOfPage":"https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/","datePublished":"2026-03-18T00:00:00.000Z","dateModified":"2026-03-18T00:00:00.000Z","author":[{"@type":"Person","name":"Flowdence","url":"https://flowdence.io/"}],"publisher":{"@type":"Organization","name":"Flowdence","logo":{"@type":"ImageObject","url":"https://blog.flowdence.io/images/flowdence-icon.png"}},"inLanguage":"en"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does MuleSoft API visibility mean in the context of Confluence?","acceptedAnswer":{"@type":"Answer","text":"MuleSoft API visibility in Confluence means that API status, deployment details, environment health, and security posture from Anypoint Platform are surfaced directly on Confluence pages. Instead of requiring every stakeholder to log into Anypoint, MuleSight renders live data cards and dashboards inside the wiki where teams already collaborate."}},{"@type":"Question","name":"Do Confluence users need MuleSoft Anypoint access to see API data?","acceptedAnswer":{"@type":"Answer","text":"No. MuleSight uses a single Connected App credential configured by a Confluence space administrator. Anyone who can view the Confluence space can see MuleSight snapshot macros and dashboards without needing their own Anypoint Platform login."}},{"@type":"Question","name":"How does MuleSight improve MuleSoft documentation in Confluence?","acceptedAnswer":{"@type":"Answer","text":"MuleSight replaces static screenshots and manually maintained tables with live snapshot macros that pull current data from MuleSoft APIs. Exchange assets, Runtime Manager applications, and API Manager instances are displayed as structured cards that show real-time status, version, and configuration details."}},{"@type":"Question","name":"Can MuleSight show API security information in Confluence?","acceptedAnswer":{"@type":"Answer","text":"Yes. The API Security Posture tab shows applied policies, SLA tiers, and contract counts per API per environment. It compares enabled policy templates across environments and flags security drift — like an authentication policy present in production but missing in staging."}},{"@type":"Question","name":"Is MuleSight read-only? Does it change anything in MuleSoft?","acceptedAnswer":{"@type":"Answer","text":"Yes, MuleSight is entirely read-only. It uses GET-only API calls against MuleSoft Anypoint Platform and never writes, deploys, or modifies MuleSoft resources. The Connected App requires only read-only OAuth scopes."}}]}]</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Flowdence Blog" href="https://blog.flowdence.io/rss.xml"><link rel="alternate" type="text/plain" title="LLMs" href="/llms.txt"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/assets/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><!-- Minimal inline script to prevent FOUC - sets theme immediately --><script>
+      (function () {
+        const initialColorScheme = ""; // "light" | "dark"
+        const currentTheme = localStorage.getItem("theme");
+
+        function getPreferTheme() {
+          if (currentTheme) return currentTheme;
+          if (initialColorScheme) return initialColorScheme;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        const themeValue = getPreferTheme();
+
+        // Set theme immediately to prevent flash
+        document.firstElementChild?.setAttribute("data-theme", themeValue);
+
+        // Export minimal API for external script
+        window.theme = {
+          themeValue: themeValue,
+          getTheme: () => window.theme.themeValue,
+          setTheme: val => {
+            window.theme.themeValue = val;
+          },
+        };
+      })();
+    </script><link rel="stylesheet" href="/assets/about.3HB6f-iK.css">
+<style>:where([data-astro-image]){object-fit:var(--fit);object-position:var(--pos);height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-cnm6ndkw-1"] { view-transition-name: bringing-mulesoft-api-visibility-into-confluence; }@layer astro { ::view-transition-old(bringing-mulesoft-api-visibility-into-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(bringing-mulesoft-api-visibility-into-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(bringing-mulesoft-api-visibility-into-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(bringing-mulesoft-api-visibility-into-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: mulesight; }@layer astro { ::view-transition-old(mulesight) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(mulesight) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(mulesight) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(mulesight) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: mulesoft; }@layer astro { ::view-transition-old(mulesoft) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(mulesoft) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(mulesoft) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(mulesoft) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: confluence; }@layer astro { ::view-transition-old(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-5"] { view-transition-name: api-documentation; }@layer astro { ::view-transition-old(api-documentation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(api-documentation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(api-documentation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(api-documentation) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-6"] { view-transition-name: api-visibility; }@layer astro { ::view-transition-old(api-visibility) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(api-visibility) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(api-visibility) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(api-visibility) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body>  <a id="skip-to-content" href="#main-content" class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <header class="app-layout flex flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="py-4 sm:py-6 border-b border-border relative w-full bg-background flex items-baseline justify-between sm:items-center"> <a href="/" class="absolute inline-flex items-center gap-2 py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"> <img src="/images/flowdence-icon.png" alt="Flowdence logo" width="28" height="28" class="h-7 w-7 rounded-xs" loading="eager" decoding="async"> <span>Flowdence Blog</span> </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg> </button> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Posts
+</a> </li> <li class="col-span-2"> <a href="/tags">
+Tags
+</a> </li> <li class="col-span-2"> <a href="https://docs.flowdence.io" target="_blank" rel="noopener noreferrer">
+Docs
+</a> </li> <li class="col-span-2"> <a href="/about">
+About
+</a> </li> <li class="col-span-2"> <a href="/archives" title="Archives" aria-label="archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex justify-center p-3 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden sm:inline-block"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg> <span class="sm:sr-only">Archives</span>  </a> </li> <li class="col-span-1 flex items-center justify-center"> <a href="/search" title="Search" aria-label="search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex p-3 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span>  </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",s);</script> <div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline -ms-2 mt-8 mb-2 hover:text-foreground/75"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg><span>Go back</span> </a></div><script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="app-layout pb-12" data-pagefind-body>   <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-transition-scope="astro-cnm6ndkw-1"> Bringing MuleSoft API Visibility into Confluence </h1> <div class="my-2 flex items-center gap-2"> <div class="flex items-center gap-x-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 min-w-5.5"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg>  <time class="text-sm sm:text-base" datetime="2026-03-18T00:00:00.000Z">18 Mar, 2026</time> </div> <span aria-hidden="true" class="max-sm:hidden hidden">|</span>  </div> <article id="article" class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"> <p>This post is for MuleSoft platform engineers, integration architects, and technical leads who use Confluence for team documentation and want to make MuleSoft API data accessible to stakeholders who do not have Anypoint Platform access.</p>
+<p>Most organizations run MuleSoft integrations that touch dozens of APIs across multiple environments. The data about those APIs — what is deployed, what version is running, which security policies are applied, whether environments are in sync — lives in Anypoint Platform. The problem is that Anypoint Platform access is typically limited to the platform engineering team. Everyone else who needs this information — product managers, architects, security reviewers, compliance officers, on-call engineers reading runbooks — either asks the platform team or works without it.</p>
+<p>This is the MuleSoft API visibility gap. The data exists, but it is not visible where decisions get made.</p>
+<h2 id="the-visibility-problem-in-mulesoft-organizations">The Visibility Problem in MuleSoft Organizations</h2>
+<p>MuleSoft Anypoint Platform (MuleSoft’s unified management console for APIs and integrations) is a powerful tool for the teams that use it daily. But it was designed for platform engineers, not for the broader organization. Access is typically restricted to people who need to deploy, configure, or manage APIs directly.</p>
+<p>This creates a structural information asymmetry. The people who build and operate MuleSoft integrations can see everything. Everyone else sees nothing — unless someone manually copies the information into a Confluence page, a Slack message, or a slide deck.</p>
+<h3 id="who-needs-api-visibility-but-lacks-anypoint-access">Who needs API visibility but lacks Anypoint access</h3>
+<p><strong>Product managers</strong> planning feature releases need to know which APIs are deployed in production, what versions are running, and whether dependent services are stable. They should not need to request a platform engineer’s time for this.</p>
+<p><strong>Security and compliance teams</strong> reviewing API security posture need to see what policies are applied, whether authentication is enforced, and how policy coverage varies across environments. Manually requesting this data for every review cycle creates bottlenecks and delays.</p>
+<p><strong>Architects</strong> evaluating the integration landscape need a current inventory of APIs, their versions, deployment states, and environment distribution. Architecture decisions based on stale information lead to misaligned roadmaps.</p>
+<p><strong>On-call engineers</strong> responding to incidents need to see deployment status and configuration for affected services quickly. If the runbook references a service and the engineer cannot verify its current state without logging into Anypoint, incident resolution slows down.</p>
+<p><strong>New team members</strong> onboarding onto a project need to understand the integration topology. Telling them to “check Anypoint” assumes they have access, training, and context they do not yet have.</p>
+<p>In each of these cases, the information already exists in Anypoint Platform. The problem is getting it to the people who need it, in the place where they already work.</p>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;">
+<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
+<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">📋</div>
+<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Product Managers</div>
+<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need deployment status and version info for release planning</p>
+</div>
+<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
+<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">🔒</div>
+<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Security &#x26; Compliance</div>
+<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need policy coverage and security posture across environments</p>
+</div>
+<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
+<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">🚨</div>
+<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">On-Call Engineers</div>
+<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need live deployment state in runbooks during incident response</p>
+</div>
+</div>
+<h2 id="confluence-as-the-visibility-layer">Confluence as the Visibility Layer</h2>
+<p>For most organizations using Atlassian tools, Confluence is the natural place to surface MuleSoft API data. Teams already use Confluence for runbooks, architecture documentation, project status pages, and compliance evidence. Adding live API visibility to those same pages eliminates the context switch between “where I read about the integration” and “where I check if the integration is healthy.”</p>
+<p><a href="https://flowdence.io/products/mulesight">MuleSight for Confluence</a> bridges this gap. It is a Forge-native Confluence Cloud app that connects to your MuleSoft Anypoint Platform via a read-only Connected App and makes API data visible directly on Confluence pages. MuleSight never modifies anything in MuleSoft — every API call is a GET request.</p>
+<p>The result is that anyone with Confluence access can see live MuleSoft API status, environment comparisons, and security posture without needing their own Anypoint login.</p>
+<h2 id="how-mulesight-brings-api-data-into-confluence">How MuleSight Brings API Data into Confluence</h2>
+<p>MuleSight provides several mechanisms for surfacing MuleSoft data in Confluence, each suited to different visibility needs.</p>
+<h3 id="snapshot-macros-for-inline-api-visibility">Snapshot Macros for Inline API Visibility</h3>
+<p>The most direct form of visibility is the snapshot macro. When you paste an Anypoint Platform URL into a Confluence page — an Exchange asset URL, a Runtime Manager application URL, or an API Manager instance URL — MuleSight converts it into a live data card.</p>
+<p>These cards display current information pulled from MuleSoft APIs:</p>
+<ul>
+<li><strong>Exchange macros</strong> show asset name, type, version, lifecycle state, and publish metadata</li>
+<li><strong>Runtime Manager macros</strong> show application name, deployment status, artifact version, target environment, and worker configuration</li>
+<li><strong>API Manager macros</strong> show API instance name, version, status, applied policies, SLA tiers, and contract counts</li>
+</ul>
+<p>Three display modes let you choose the right level of detail for the page context. <strong>Detailed</strong> mode renders a full card with all metadata — suitable for runbooks and design documents. <strong>Compact</strong> mode renders a condensed row for status dashboards where you need to show many resources at a glance. <strong>Endpoints</strong> mode (for Exchange assets) renders the HTTP methods, resource paths, and descriptions extracted from RAML or OAS specifications.</p>
+<p>Each macro includes a direct link to the resource in the Anypoint console, so a platform engineer who sees something worth investigating can jump straight to the source system. If MuleSoft APIs are temporarily unreachable, MuleSight renders the last cached snapshot with a stale data warning — so the Confluence page never goes blank.</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/mulesight-visibility/macro-runtime-modes.png" alt="MuleSight Runtime Manager macro showing detailed and compact display modes for CloudHub application status in Confluence" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>MuleSight snapshot macros in Confluence. Detailed mode shows full metadata for runbooks; compact mode renders condensed rows for status dashboards.</em></p>
+<h3 id="environment-comparison-for-cross-environment-visibility">Environment Comparison for Cross-Environment Visibility</h3>
+<p>Individual snapshot macros show the state of a single resource. But many visibility questions are comparative: “Is the same version deployed in staging and production?” or “Which APIs are deployed in dev but not yet in prod?”</p>
+<p>The MuleSight Environment Comparison Dashboard answers these questions. It lets you select multiple MuleSoft environments and compare resources side by side. For API Manager, it shows each logical API with per-environment columns displaying version, instance ID, and status. For CloudHub, it shows deployment status, artifact version, and application name per environment.</p>
+<p>MuleSight flags drift — differences in presence, version, or status across environments. A “Drift only” toggle filters the view to show only misaligned resources, which is the fastest way for anyone (not just platform engineers) to understand where environments diverge.</p>
+<p>The dashboard supports CSV and HTML export (up to 10,000 rows) for sharing with stakeholders outside Confluence or attaching to change management workflows.</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/mulesight-visibility/env-comparison.png" alt="MuleSight environment comparison dashboard showing side-by-side resource view across MuleSoft environments with drift filter and export options" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>The Environment Comparison dashboard compares resources across selected environments. The “Drift only” toggle filters to show only misaligned resources.</em></p>
+<h3 id="security-posture-visibility">Security Posture Visibility</h3>
+<p>API security is one area where the visibility gap creates real risk. If security and compliance teams cannot see which policies are applied to which APIs across which environments, they are assessing security posture based on assumptions rather than data.</p>
+<p>The MuleSight Security Posture tab surfaces per-API, per-environment security data directly in Confluence:</p>
+<ul>
+<li><strong>Applied policies</strong> with category tags (AUTH, THREAT, ALLOWLIST, TRAFFIC, CUSTOM)</li>
+<li><strong>SLA tier definitions</strong> with rate limits and auto-approve configuration</li>
+<li><strong>Contract counts</strong> for informational context</li>
+</ul>
+<p>Security drift detection compares enabled policy templates across environments, intentionally ignoring disabled policies and version-only differences to reduce false positives. The focus is on meaningful security gaps — like an authentication policy present in production but absent in staging.</p>
+<p>A drilldown modal lets reviewers inspect full policy, tier, and contract details for any API instance. Results can be exported as CSV or HTML for audit evidence.</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/mulesight-visibility/security-posture.png" alt="MuleSight API security posture modal showing applied policies, SLA tiers, and contract details across MuleSoft environments" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>API Security Posture drill-down showing applied policies, SLA tiers, and contracts for a specific API across environments.</em></p>
+<h3 id="scheduled-drift-notifications">Scheduled Drift Notifications</h3>
+<p>Visibility is most valuable when it is proactive. The MuleSight Ops Dashboard runs on a configurable schedule and monitors for drift transitions — resources that were aligned and have become misaligned, or vice versa.</p>
+<p>When drift is detected, MuleSight publishes a structured incident page under a designated parent page in your Confluence space. Each incident page includes run summaries, change categories (new resources, version changes, status changes, newly drifted items), drift snapshot tables, and deep links to affected Anypoint resources.</p>
+<p>Every published incident page @mentions your configured MuleSight Incident Watchers — Confluence users who receive notifications through their existing channels (email, Slack, mobile push). This means stakeholders do not need to remember to check the dashboard. When something changes, Confluence tells them.</p>
+<h3 id="ai-assisted-inventory-queries">AI-Assisted Inventory Queries</h3>
+<p>For teams using Atlassian Rovo, MuleSight includes a Specialist Rovo Agent that answers natural language questions about your MuleSoft inventory using cached data. Questions like “Show me all CloudHub apps in production that are currently STOPPED” or “What policies does the Payment Gateway API have in DEV?” return structured answers with snapshot timestamps.</p>
+<p>The agent uses non-hallucination guardrails: if it does not have data to answer a question, it says so and recommends refreshing or checking the dashboard directly.</p>
+<h2 id="what-changes-when-api-data-is-visible">What Changes When API Data Is Visible</h2>
+<p>When MuleSoft API visibility moves from Anypoint Platform into Confluence, several organizational patterns shift:</p>
+<p><strong>Self-service replaces request queues.</strong> Product managers stop filing tickets asking “what version is deployed in prod?” The answer is on the Confluence page they already use for project tracking.</p>
+<p><strong>Security reviews get faster.</strong> Compliance teams can see current policy coverage across environments on a Confluence page instead of scheduling a walkthrough with the platform team. Audit evidence is exportable, timestamped, and always current.</p>
+<p><strong>Incident response starts with context.</strong> On-call engineers open the runbook and see live deployment status alongside the troubleshooting steps. They do not need to context-switch to Anypoint to verify basic facts before they can start debugging.</p>
+<p><strong>Architecture decisions use current data.</strong> Integration landscape reviews reference live dashboards instead of manually maintained spreadsheets. The environment comparison shows what is actually deployed, not what someone remembered to update last quarter.</p>
+<p><strong>Onboarding accelerates.</strong> New team members read Confluence pages that show the current state of the integration platform. Their mental model starts accurate because the documentation is not a historical snapshot — it reflects what is running right now.</p>
+<h2 id="diagnostics-understanding-what-mulesight-can-see">Diagnostics: Understanding What MuleSight Can See</h2>
+<p>Before MuleSight can provide visibility, it needs the right permissions from your MuleSoft Connected App. The Diagnostics tab provides probe-driven validation that shows:</p>
+<ul>
+<li><strong>Coverage status</strong> (full, partial, none) per dataset</li>
+<li><strong>Forbidden endpoints</strong> where the Connected App lacks required scopes</li>
+<li><strong>Timeout endpoints</strong> indicating network or availability issues</li>
+<li><strong>Required scopes</strong> with per-scope status and impact explanations</li>
+</ul>
+<p>If diagnostics show partial coverage, MuleSight explains exactly which features are unavailable and which scopes to add. This prevents the common problem of configuring an integration, assuming it has full visibility, and later discovering blind spots.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>MuleSight is available on the <a href="https://marketplace.atlassian.com/vendors/937580939/flowdence">Atlassian Marketplace</a>. Setup requires a MuleSoft Connected App with eight read-only OAuth scopes — no write access needed.</p>
+<ol>
+<li>Install MuleSight from the <a href="https://marketplace.atlassian.com/vendors/937580939/flowdence">Atlassian Marketplace</a></li>
+<li>Configure your Connected App credentials in Confluence space settings</li>
+<li>Run a test connection to validate access</li>
+<li>Paste Anypoint URLs into Confluence pages to create live snapshot macros</li>
+</ol>
+<p>From there, open the MuleSight dashboard to compare environments, configure watchers in the Ops tab for drift notifications, and use the Security Posture tab for governance reviews.</p>
+<ul>
+<li><a href="https://flowdence.io/products/mulesight">MuleSight product page</a></li>
+<li><a href="https://docs.flowdence.io/mulesight/docs/">MuleSight documentation</a></li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-does-mulesoft-api-visibility-mean-in-the-context-of-confluence">What does MuleSoft API visibility mean in the context of Confluence?</h3>
+<p>MuleSoft API visibility in Confluence means that API status, deployment details, environment health, and security posture from Anypoint Platform are surfaced directly on Confluence pages. Instead of requiring every stakeholder to log into Anypoint, MuleSight renders live data cards and dashboards inside the wiki where teams already collaborate. This eliminates the information asymmetry between platform engineers who have Anypoint access and the broader organization that does not.</p>
+<h3 id="do-confluence-users-need-mulesoft-anypoint-access-to-see-api-data">Do Confluence users need MuleSoft Anypoint access to see API data?</h3>
+<p>No. MuleSight uses a single Connected App credential configured by a Confluence space administrator. Anyone who can view the Confluence space can see MuleSight snapshot macros and dashboards without needing their own Anypoint Platform login. This is the core value proposition — making API data visible to people who do not have (and should not need) direct Anypoint access.</p>
+<h3 id="how-does-mulesight-improve-mulesoft-documentation-in-confluence">How does MuleSight improve MuleSoft documentation in Confluence?</h3>
+<p>MuleSight replaces static screenshots and manually maintained tables with live snapshot macros that pull current data from MuleSoft APIs. Exchange assets, Runtime Manager applications, and API Manager instances are displayed as structured cards that show real-time status, version, and configuration details. The documentation stays current because it references the source of truth rather than storing a static copy.</p>
+<h3 id="can-mulesight-show-api-security-information-in-confluence">Can MuleSight show API security information in Confluence?</h3>
+<p>Yes. The API Security Posture tab shows applied policies categorized by type (AUTH, THREAT, ALLOWLIST, TRAFFIC, CUSTOM), SLA tier definitions with rate limits, and contract counts per API per environment. It compares enabled policy templates across environments and flags security drift — like an authentication policy present in production but missing in staging. Results can be exported as CSV or HTML for compliance evidence.</p>
+<h3 id="is-mulesight-read-only-does-it-change-anything-in-mulesoft">Is MuleSight read-only? Does it change anything in MuleSoft?</h3>
+<p>Yes, MuleSight is entirely read-only. It uses GET-only API calls against MuleSoft Anypoint Platform and never writes, deploys, restarts, or modifies MuleSoft resources. The Connected App requires only eight read-only OAuth scopes. Your Anypoint Platform remains untouched.</p>
+<hr>
+<p><em>MuleSight is a Forge-hosted Confluence Cloud app. All data processing runs on Atlassian infrastructure with no external egress beyond anypoint.mulesoft.com. Feature descriptions in this post reflect the current product as of March 2026.</em></p> </article> <hr class="my-8 border-dashed">  <ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"> <li> <a href="/tags/mulesight/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> mulesight </a> </li><li> <a href="/tags/mulesoft/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> mulesoft </a> </li><li> <a href="/tags/confluence/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-4"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> confluence </a> </li><li> <a href="/tags/api-documentation/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-5"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> api-documentation </a> </li><li> <a href="/tags/api-visibility/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-6"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> api-visibility </a> </li> </ul> <div id="btt-btn-container" class="fixed end-4 bottom-8 z-50 md:sticky md:end-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"> <button data-button="back-to-top" class="group relative bg-background px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"> <span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90 md:hidden"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span class="sr-only text-sm group-hover:text-accent md:not-sr-only"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 5l0 14" /><path d="M16 9l-4 -4" /><path d="M8 9l4 -4" /></svg>
+Back To Top
+</span> </button> </div> <script data-astro-rerun>
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    // Attach click event handler for back-to-top button
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
+    // Handle button visibility according to scroll position
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script> <div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post on:</span><div class="text-center"><a href="https://wa.me/?text=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post via WhatsApp" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg><span class="sr-only">Share this post via WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post on Facebook" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg><span class="sr-only">Share this post on Facebook</span> </a><a href="https://x.com/intent/post?url=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post on X" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Share this post on X</span> </a><a href="https://t.me/share/url?url=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post via Telegram" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg><span class="sr-only">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post on Pinterest" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg><span class="sr-only">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://blog.flowdence.io/posts/bringing-mulesoft-api-visibility-into-confluence/" title="Share this post via email" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Share this post via email</span> </a></div></div> <hr class="my-6 border-dashed"> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2"> <a href="/posts/approvalflow-pricing-explained" class="flex w-full gap-1 hover:opacity-75"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-none rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <div> <span>Previous Post</span> <div class="text-sm text-accent/85">ApprovalFlow Pricing Explained: Free Tier, Per-User, and When to Upgrade</div> </div> </a> <a href="/posts/confluence-content-governance-checklist" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"> <div> <span>Next Post</span> <div class="text-sm text-accent/85">Confluence Content Governance Checklist for Compliance Teams</div> </div> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-none rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg> </a> </div> </main> <footer class="app-layout mt-auto"> <div class="py-6 sm:py-4 border-t border-border flex flex-col items-center justify-between sm:flex-row-reverse"> <div class="flex flex-wrap items-center gap-1"> <a href="https://www.youtube.com/@flowdence" title="Flowdence Blog on YouTube" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg> <span class="sr-only">Flowdence Blog on YouTube</span>  </a><a href="https://x.com/flowdenceio" title="Flowdence Blog on X" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> <span class="sr-only">Flowdence Blog on X</span>  </a><a href="https://www.linkedin.com/company/flowdence" title="Flowdence Blog on LinkedIn" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg> <span class="sr-only">Flowdence Blog on LinkedIn</span>  </a><a href="mailto:support@flowdence.io" title="Send an email to Flowdence Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg> <span class="sr-only">Send an email to Flowdence Blog</span>  </a> </div> <nav class="my-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm" aria-label="Footer links"> <a href="https://flowdence.io" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Main Site</a> <a href="https://docs.flowdence.io" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Docs</a> <a href="https://flowdence.io/support" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Support</a> </nav> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <span>Copyright &#169; 2026</span> <span class="hidden sm:inline">&nbsp;|&nbsp;</span> <span>All rights reserved.</span> </div> </div> </footer>  <!-- Load full theme logic --> <script type="module">const d="theme",r="light",m="dark";function i(){const e=localStorage.getItem(d);return e||(window.matchMedia("(prefers-color-scheme: dark)").matches?m:r)}let t=window.theme?.themeValue??i();function c(){localStorage.setItem(d,t),o()}function o(){document.firstElementChild?.setAttribute("data-theme",t),document.querySelector("#theme-btn")?.setAttribute("aria-label",t);const e=document.body;if(e){const n=window.getComputedStyle(e).backgroundColor;document.querySelector("meta[name='theme-color']")?.setAttribute("content",n)}}window.theme?(window.theme.setPreference=c,window.theme.reflectPreference=o):window.theme={themeValue:t,setPreference:c,reflectPreference:o,getTheme:()=>t,setTheme:e=>{t=e}};o();function s(){o(),document.querySelector("#theme-btn")?.addEventListener("click",()=>{t=t===r?m:r,window.theme?.setTheme(t),c()})}s();document.addEventListener("astro:after-swap",s);document.addEventListener("astro:before-swap",e=>{const a=e,n=document.querySelector("meta[name='theme-color']")?.getAttribute("content");n&&a.newDocument.querySelector("meta[name='theme-color']")?.setAttribute("content",n)});window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",({matches:e})=>{t=e?m:r,window.theme?.setTheme(t),c()});</script> </body> </html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      // Check if --file-name-offset custom property exists
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      // Determine the top positioning class
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
