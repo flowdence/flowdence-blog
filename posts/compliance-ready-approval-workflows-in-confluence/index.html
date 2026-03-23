@@ -1,0 +1,587 @@
+<!DOCTYPE html><html dir="ltr" lang="en" class="scroll-smooth"> <head><script async src="https://www.googletagmanager.com/gtag/js?id=G-4SQGS73YLV"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4SQGS73YLV");
+    </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="icon" type="image/png" href="/images/flowdence-icon.png"><link rel="apple-touch-icon" href="/images/flowdence-icon.png"><link rel="canonical" href="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/"><link rel="alternate" hreflang="en" href="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/"><link rel="alternate" hreflang="x-default" href="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/"><meta name="generator" content="Astro v5.17.3"><!-- Load Font --><style>@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/9617ee3bc3ad47fd.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86";src:url("/assets/fonts/616354e20c7baae2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-de078a87b11e4a86 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-de078a87b11e4a86","Google Sans Code-de078a87b11e4a86 fallback: Courier New",monospace;}</style><!-- General Meta Tags --><title>Compliance-Ready Approval Workflows in Confluence | Flowdence Blog</title><meta name="title" content="Compliance-Ready Approval Workflows in Confluence | Flowdence Blog"><meta name="description" content="How to build compliance-ready approval workflows in Confluence that satisfy SOC 2, ISO 27001, and other audit requirements — with version-aware tracking, audit trails, and exportable evidence."><meta name="author" content="Flowdence"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:site_name" content="Flowdence Blog"><meta property="og:locale" content="en_US"><meta property="og:title" content="Compliance-Ready Approval Workflows in Confluence | Flowdence Blog"><meta property="og:description" content="How to build compliance-ready approval workflows in Confluence that satisfy SOC 2, ISO 27001, and other audit requirements — with version-aware tracking, audit trails, and exportable evidence."><meta property="og:url" content="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/"><meta property="og:image" content="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/index.png"><meta property="og:image:alt" content="Compliance-Ready Approval Workflows in Confluence | Flowdence Blog - Flowdence"><!-- Article Published/Modified time --><meta property="article:published_time" content="2026-03-19T00:00:00.000Z"><meta property="article:modified_time" content="2026-03-19T00:00:00.000Z"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/"><meta name="twitter:title" content="Compliance-Ready Approval Workflows in Confluence | Flowdence Blog"><meta name="twitter:description" content="How to build compliance-ready approval workflows in Confluence that satisfy SOC 2, ISO 27001, and other audit requirements — with version-aware tracking, audit trails, and exportable evidence."><meta name="twitter:image" content="https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/index.png"><!-- Google JSON-LD Structured data --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Flowdence","url":"https://blog.flowdence.io/","logo":"https://blog.flowdence.io/images/flowdence-icon.png","sameAs":["https://flowdence.io/","https://www.youtube.com/@flowdence","https://x.com/flowdenceio","https://www.linkedin.com/company/flowdence"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@flowdence.io","url":"https://flowdence.io/"}]},{"@context":"https://schema.org","@type":"WebSite","name":"Flowdence Blog","url":"https://blog.flowdence.io/","description":"Product updates, engineering notes, and release stories from the Flowdence team.","publisher":{"@type":"Organization","name":"Flowdence"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":"https://blog.flowdence.io/search/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@context":"https://schema.org","@type":"BlogPosting","headline":"Compliance-Ready Approval Workflows in Confluence","description":"How to build compliance-ready approval workflows in Confluence that satisfy SOC 2, ISO 27001, and other audit requirements — with version-aware tracking, audit trails, and exportable evidence.","image":["https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/index.png"],"mainEntityOfPage":"https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/","datePublished":"2026-03-19T00:00:00.000Z","dateModified":"2026-03-19T00:00:00.000Z","author":[{"@type":"Person","name":"Flowdence","url":"https://flowdence.io/"}],"publisher":{"@type":"Organization","name":"Flowdence","logo":{"@type":"ImageObject","url":"https://blog.flowdence.io/images/flowdence-icon.png"}},"inLanguage":"en"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Confluence have built-in approval workflows for compliance?","acceptedAnswer":{"@type":"Answer","text":"No. Confluence Cloud does not include native multi-step approval workflows, version-aware approval tracking, or exportable audit trails. Teams in regulated environments use Marketplace apps like ApprovalFlow to add these capabilities. ApprovalFlow provides configurable approval steps, version-anchored decisions, timestamped audit records, and CSV/HTML export for compliance evidence."}},{"@type":"Question","name":"How do I create an audit trail for Confluence page approvals?","acceptedAnswer":{"@type":"Answer","text":"ApprovalFlow automatically records every approval action — submission, approval, rejection, and resubmission — with timestamps, actor identifiers, page version numbers, and decision comments. These records are visible in the page's comment thread and can be exported from the Workflow Analytics dashboard as CSV or HTML for auditor review."}},{"@type":"Question","name":"Which compliance frameworks require document approval controls?","acceptedAnswer":{"@type":"Answer","text":"SOC 2 (Trust Services Criteria CC8.1), ISO 27001 (Annex A 7.5), HIPAA (Administrative Safeguards §164.316), and GxP (21 CFR Part 11) all require documented evidence that content was reviewed and approved before publication, with traceable change history and version control. Any framework that includes document control or change management requirements benefits from structured approval workflows."}},{"@type":"Question","name":"Can I prove who approved a Confluence page during an audit?","acceptedAnswer":{"@type":"Answer","text":"Yes. ApprovalFlow records the approver identity, timestamp, page version, and any decision comments for every approval action. This data persists in the page's approval history and can be exported as a compliance artifact. Each decision is tied to a specific page version, so auditors can verify exactly which content was reviewed."}},{"@type":"Question","name":"What happens when an approved page is edited in a compliance workflow?","acceptedAnswer":{"@type":"Answer","text":"ApprovalFlow uses version-aware tracking. When a previously approved page is edited, its status changes to indicate the current version differs from the approved version. Authors can resubmit the updated version for re-approval, creating a new approval cycle that is tracked independently. This ensures every published version has its own approval record."}},{"@type":"Question","name":"How do I export Confluence approval records for auditors?","acceptedAnswer":{"@type":"Answer","text":"ApprovalFlow's Workflow Analytics dashboard includes export functionality. Filter by date range, workflow, or status, then export as CSV for spreadsheet analysis or HTML for formatted reports. The export includes submission dates, approval decisions, approver names, version numbers, and comments — the evidence auditors typically request."}}]}]</script><!-- Enable RSS feed auto-discovery  --><!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery --><link rel="alternate" type="application/rss+xml" title="Flowdence Blog" href="https://blog.flowdence.io/rss.xml"><link rel="alternate" type="text/plain" title="LLMs" href="/llms.txt"><meta name="theme-color" content=""><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/assets/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><!-- Minimal inline script to prevent FOUC - sets theme immediately --><script>
+      (function () {
+        const initialColorScheme = ""; // "light" | "dark"
+        const currentTheme = localStorage.getItem("theme");
+
+        function getPreferTheme() {
+          if (currentTheme) return currentTheme;
+          if (initialColorScheme) return initialColorScheme;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        const themeValue = getPreferTheme();
+
+        // Set theme immediately to prevent flash
+        document.firstElementChild?.setAttribute("data-theme", themeValue);
+
+        // Export minimal API for external script
+        window.theme = {
+          themeValue: themeValue,
+          getTheme: () => window.theme.themeValue,
+          setTheme: val => {
+            window.theme.themeValue = val;
+          },
+        };
+      })();
+    </script><link rel="stylesheet" href="/assets/about.3HB6f-iK.css">
+<style>:where([data-astro-image]){object-fit:var(--fit);object-position:var(--pos);height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}
+@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-cnm6ndkw-1"] { view-transition-name: compliance-ready-approval-workflows-in-confluence; }@layer astro { ::view-transition-old(compliance-ready-approval-workflows-in-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(compliance-ready-approval-workflows-in-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(compliance-ready-approval-workflows-in-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(compliance-ready-approval-workflows-in-confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-cnm6ndkw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-cnm6ndkw-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-2"] { view-transition-name: approvalflow; }@layer astro { ::view-transition-old(approvalflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(approvalflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(approvalflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(approvalflow) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-3"] { view-transition-name: confluence; }@layer astro { ::view-transition-old(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(confluence) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-4"] { view-transition-name: compliance; }@layer astro { ::view-transition-old(compliance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(compliance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(compliance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(compliance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-5"] { view-transition-name: audit-trail; }@layer astro { ::view-transition-old(audit-trail) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(audit-trail) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(audit-trail) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(audit-trail) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-5"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-5"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-36ssibgs-6"] { view-transition-name: governance; }@layer astro { ::view-transition-old(governance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(governance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(governance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(governance) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-36ssibgs-6"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-36ssibgs-6"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body>  <a id="skip-to-content" href="#main-content" class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4">
+Skip to content
+</a> <header class="app-layout flex flex-col items-center justify-between sm:flex-row"> <div id="top-nav-wrap" class="py-4 sm:py-6 border-b border-border relative w-full bg-background flex items-baseline justify-between sm:items-center"> <a href="/" class="absolute inline-flex items-center gap-2 py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"> <img src="/images/flowdence-icon.png" alt="Flowdence logo" width="28" height="28" class="h-7 w-7 rounded-xs" loading="eager" decoding="async"> <span>Flowdence Blog</span> </a> <nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"> <button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg> </button> <ul id="menu-items" class="mt-4 grid w-44 grid-cols-2 place-content-center gap-2 [&#38;>li>a]:block [&#38;>li>a]:px-4 [&#38;>li>a]:py-3 [&#38;>li>a]:text-center [&#38;>li>a]:font-medium [&#38;>li>a]:hover:text-accent sm:[&#38;>li>a]:px-2 sm:[&#38;>li>a]:py-1 hidden sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0"> <li class="col-span-2"> <a href="/posts" class="active-nav">
+Posts
+</a> </li> <li class="col-span-2"> <a href="/tags">
+Tags
+</a> </li> <li class="col-span-2"> <a href="https://docs.flowdence.io" target="_blank" rel="noopener noreferrer">
+Docs
+</a> </li> <li class="col-span-2"> <a href="/about">
+About
+</a> </li> <li class="col-span-2"> <a href="/archives" title="Archives" aria-label="archives" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex justify-center p-3 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden sm:inline-block"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" /><path d="M10 12l4 0" /></svg> <span class="sm:sr-only">Archives</span>  </a> </li> <li class="col-span-1 flex items-center justify-center"> <a href="/search" title="Search" aria-label="search" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex p-3 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg> <span class="sr-only">Search</span>  </a> </li> <li class="col-span-1 flex items-center justify-center"> <button id="theme-btn" class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent" title="Toggles light & dark" aria-label="auto" aria-live="polite"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg> </button> </li> </ul> </nav> </div> </header> <script type="module">function s(){const e=document.querySelector("#menu-btn"),t=document.querySelector("#menu-items"),n=document.querySelector("#menu-icon"),o=document.querySelector("#close-icon");!e||!t||!n||!o||e.addEventListener("click",()=>{const c=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",c?"false":"true"),e.setAttribute("aria-label",c?"Open Menu":"Close Menu"),t.classList.toggle("hidden"),n.classList.toggle("hidden"),o.classList.toggle("hidden")})}s();document.addEventListener("astro:after-swap",s);</script> <div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline -ms-2 mt-8 mb-2 hover:text-foreground/75"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg><span>Go back</span> </a></div><script type="module">function o(){const t=document.querySelector("#back-button"),e=sessionStorage.getItem("backUrl");e&&t&&(t.href=e)}document.addEventListener("astro:page-load",o);o();</script> <main id="main-content" class="app-layout pb-12" data-pagefind-body>   <h1 class="inline-block text-2xl font-bold text-accent sm:text-3xl" data-astro-transition-scope="astro-cnm6ndkw-1"> Compliance-Ready Approval Workflows in Confluence </h1> <div class="my-2 flex items-center gap-2"> <div class="flex items-center gap-x-2 opacity-80"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 min-w-5.5"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M7 14h.013" /><path d="M10.01 14h.005" /><path d="M13.01 14h.005" /><path d="M16.015 14h.005" /><path d="M13.015 17h.005" /><path d="M7.01 17h.005" /><path d="M10.01 17h.005" /></svg>  <time class="text-sm sm:text-base" datetime="2026-03-19T00:00:00.000Z">19 Mar, 2026</time> </div> <span aria-hidden="true" class="max-sm:hidden hidden">|</span>  </div> <article id="article" class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"> <p>If your organization operates under SOC 2, ISO 27001, HIPAA, or similar compliance frameworks, you already know that document control is not optional. Auditors want evidence that content was reviewed and approved before publication, that changes are tracked, and that approval decisions are tied to specific document versions.</p>
+<p>Confluence is where many of these documents live — policies, procedures, runbooks, customer-facing documentation. But Confluence Cloud has no native approval workflow, no version-aware approval tracking, and no built-in way to export approval evidence for auditors.</p>
+<p>This post explains how to build compliance-ready approval workflows in Confluence using <a href="https://flowdence.io/products/approvalflow">ApprovalFlow</a>, and maps specific capabilities to the controls that auditors actually check.</p>
+<h2 id="what-auditors-look-for">What Auditors Look For</h2>
+<p>Compliance audits that involve document control typically check for three things:</p>
+<p><strong>1. Evidence of review and approval.</strong> Someone with the right authority reviewed the content and explicitly approved it before publication. Not “I think Jane looked at it” — a recorded decision with a name, a timestamp, and ideally a comment.</p>
+<p><strong>2. Version-specific decisions.</strong> The approval applies to a specific version of the document. If the document was edited after approval, the auditor wants to know whether the new version was re-reviewed.</p>
+<p><strong>3. Traceability.</strong> A continuous record from creation through review to approval, including any rejections or revision cycles. The record should be exportable and should not depend on someone’s memory.</p>
+<p>These requirements appear across frameworks:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Framework</th><th>Relevant Control</th><th>What It Requires</th></tr></thead><tbody><tr><td>SOC 2</td><td>CC8.1 (Change Management)</td><td>Documented approval for changes to system components, including documentation</td></tr><tr><td>ISO 27001</td><td>Annex A 7.5 (Documented Information)</td><td>Controlled creation, review, and approval of documented information</td></tr><tr><td>HIPAA</td><td>§164.316 (Documentation)</td><td>Policies and procedures must be maintained with documented review and approval cycles</td></tr><tr><td>GxP / 21 CFR Part 11</td><td>Electronic Records</td><td>Audit trails with who, when, and what was approved; version-specific sign-off</td></tr></tbody></table>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;">
+<div style="border-left: 4px solid #0d6efd; border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; background: #f0f6ff;">
+<div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #0d6efd; margin-bottom: 0.3rem;">SOC 2 / ISO 27001</div>
+<p style="margin: 0; font-size: 0.85rem;">Documented approval with named reviewers, timestamps, and change traceability. Version-specific records for document control.</p>
+</div>
+<div style="border-left: 4px solid #28a745; border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; background: #f0faf3;">
+<div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #28a745; margin-bottom: 0.3rem;">HIPAA / GxP</div>
+<p style="margin: 0; font-size: 0.85rem;">Electronic records with audit trails showing who, when, and what was approved. Version-specific sign-off for regulated documents.</p>
+</div>
+</div>
+<p>Native Confluence addresses none of these directly. Page restrictions control access but do not enforce review. Page history shows edits but does not record approval decisions. Comments can serve as informal sign-off but are not structured, searchable, or exportable.</p>
+<h2 id="how-approvalflow-maps-to-compliance-controls">How ApprovalFlow Maps to Compliance Controls</h2>
+<p><a href="https://marketplace.atlassian.com/apps/2350565795/approvalflow-for-confluence">ApprovalFlow</a> adds a structured approval lifecycle to Confluence pages. Here is how each capability addresses specific compliance requirements.</p>
+<h3 id="configurable-multi-step-workflows">Configurable Multi-Step Workflows</h3>
+<p>Compliance processes often require more than one reviewer. A policy document might need review from the content owner, then legal, then the compliance officer. A customer-facing procedure might need technical review followed by management sign-off.</p>
+<p>ApprovalFlow supports sequential multi-step workflows where each step has designated approvers. You can configure whether a step requires approval from any one reviewer or all assigned reviewers. Steps execute in order — step two does not activate until step one is complete.</p>
+<p><strong>Compliance mapping:</strong> Satisfies the “appropriate authority” requirement in SOC 2 CC8.1 and ISO 27001 A.7.5 by ensuring designated reviewers approve content in a defined sequence.</p>
+<h3 id="version-aware-approval-tracking">Version-Aware Approval Tracking</h3>
+<p>This is where most informal approval processes break down. Someone approves a page on Monday. On Tuesday, an edit is made. On Wednesday, an auditor asks whether the current content was approved.</p>
+<p>ApprovalFlow ties every approval decision to a specific page version. When a previously approved page is edited, the system marks that the current version differs from the approved version. The author can resubmit the updated version, starting a new approval cycle. The audit trail shows both cycles — the original approval and the re-approval of the revised version.</p>
+<p><strong>Compliance mapping:</strong> Directly addresses 21 CFR Part 11 version-specific sign-off requirements and ISO 27001 A.7.5 requirements for controlling changes to documented information.</p>
+<h3 id="structured-audit-trail">Structured Audit Trail</h3>
+<p>Every action in the approval lifecycle is recorded:</p>
+<ul>
+<li><strong>Submission:</strong> who submitted, when, which page version</li>
+<li><strong>Approval:</strong> who approved, when, which step, optional comment</li>
+<li><strong>Rejection:</strong> who rejected, when, required comment explaining why</li>
+<li><strong>Resubmission:</strong> who resubmitted, when, which new version</li>
+</ul>
+<p>These records appear as structured comments on the page, providing an in-context audit trail that is visible to anyone with page access. The records include @mentions to notify approvers, creating a notification chain that is itself part of the audit evidence.</p>
+<p><strong>Compliance mapping:</strong> Provides the “who, what, when” traceability required by SOC 2 CC8.1, HIPAA §164.316, and GxP electronic records requirements.</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/compliance-workflows/audit-trail-comments.png" alt="ApprovalFlow structured audit trail showing approval comments threaded on a Confluence page with timestamps, approver names, and version references" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>The structured audit trail in ApprovalFlow. Every approval action — submission, approval, rejection — is recorded as a threaded comment with timestamps, approver identity, and version reference.</em></p>
+<h3 id="exportable-evidence">Exportable Evidence</h3>
+<p>Auditors do not log into your Confluence instance. They need evidence delivered in a format they can review independently.</p>
+<p>ApprovalFlow’s <a href="https://docs.flowdence.io/approvalflow/docs/getting-started/workflow-analytics/">Workflow Analytics</a> dashboard supports filtering by date range, workflow, and status. Results can be exported as CSV (for spreadsheet analysis and evidence packages) or HTML (for formatted audit reports).</p>
+<p>The export includes submission dates, approval decisions, approver identities, version numbers, and decision comments — the complete evidence chain an auditor needs to verify your document control process.</p>
+<p><strong>Compliance mapping:</strong> Satisfies the evidence production requirements in SOC 2 examination procedures and ISO 27001 audit documentation requirements.</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/compliance-workflows/workflow-analytics.png" alt="ApprovalFlow workflow analytics dashboard showing approval rates, submission trends, and exportable compliance evidence" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>The Workflow Analytics dashboard with date range filtering and CSV/HTML export — ready for compliance evidence production.</em></p>
+<h3 id="status-visibility">Status Visibility</h3>
+<p>Compliance teams need to know the approval state of documents at a glance. ApprovalFlow uses color-coded status lozenges in the page byline:</p>
+<ul>
+<li><strong>Draft</strong> (purple) — not yet submitted for approval</li>
+<li><strong>In Approval</strong> (yellow) — submitted and awaiting reviewer decisions</li>
+<li><strong>Approved</strong> (green) — all approval steps completed</li>
+<li><strong>Changes Requested</strong> (red) — rejected with reviewer feedback</li>
+</ul>
+<p>The <a href="https://docs.flowdence.io/approvalflow/docs/getting-started/approval-queue/">Approval Queue</a> provides a space-wide view of all pending approvals, making it easy for compliance managers to identify pages that are stuck in review or have been waiting for approval beyond acceptable timeframes.</p>
+<p><strong>Compliance mapping:</strong> Supports the monitoring and oversight aspects of SOC 2 CC4.1 (Monitoring Activities) and ISO 27001 clause 9.1 (Monitoring, Measurement, Analysis and Evaluation).</p>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/compliance-workflows/approved-byline.png" alt="Confluence page showing ApprovalFlow approved status in the byline with green indicator, approver name, and timestamp" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
+</div>
+<p><em>The Approved status in the Confluence byline — color-coded for instant visibility. Compliance managers can see approval state without opening any separate dashboard.</em></p>
+<h2 id="setting-up-a-compliance-workflow">Setting Up a Compliance Workflow</h2>
+<p>Here is a practical workflow structure for a regulated content space:</p>
+<h3 id="step-1-define-your-approval-steps">Step 1: Define Your Approval Steps</h3>
+<p>Map your approval steps to the actual review roles in your compliance process. For example:</p>
+<ol>
+<li><strong>Content Owner Review</strong> — the subject matter expert verifies accuracy</li>
+<li><strong>Compliance Review</strong> — the compliance officer confirms regulatory alignment</li>
+<li><strong>Final Sign-Off</strong> — a designated authority (manager, director) provides final approval</li>
+</ol>
+<p>In ApprovalFlow, create a workflow with three steps. Assign the relevant people to each step. Choose “all approvers must approve” for steps where multiple reviewers are required.</p>
+<h3 id="step-2-assign-to-regulated-spaces">Step 2: Assign to Regulated Spaces</h3>
+<p>Use <a href="https://docs.flowdence.io/approvalflow/docs/getting-started/manage-space/">Manage Space</a> to assign the compliance workflow to all pages in the regulated space — or to specific pages that contain controlled documents.</p>
+<h3 id="step-3-establish-a-re-approval-policy">Step 3: Establish a Re-Approval Policy</h3>
+<p>Decide what happens when approved content is edited. For compliance purposes, the safest approach is to require re-approval for any edit to an approved page. Communicate this to content owners so they know that editing an approved document will trigger a new review cycle.</p>
+<svg id="mermaid-0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 773.18359375px;" viewBox="0 0 773.18359375 918" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-0{font-family:arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-0 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-0 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-0 .error-icon{fill:#552222;}#mermaid-0 .error-text{fill:#552222;stroke:#552222;}#mermaid-0 .edge-thickness-normal{stroke-width:1px;}#mermaid-0 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-0 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-0 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-0 .marker{fill:#333333;stroke:#333333;}#mermaid-0 .marker.cross{stroke:#333333;}#mermaid-0 svg{font-family:arial,sans-serif;font-size:16px;}#mermaid-0 p{margin:0;}#mermaid-0 .label{font-family:arial,sans-serif;color:#333;}#mermaid-0 .cluster-label text{fill:#333;}#mermaid-0 .cluster-label span{color:#333;}#mermaid-0 .cluster-label span p{background-color:transparent;}#mermaid-0 .label text,#mermaid-0 span{fill:#333;color:#333;}#mermaid-0 .node rect,#mermaid-0 .node circle,#mermaid-0 .node ellipse,#mermaid-0 .node polygon,#mermaid-0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-0 .rough-node .label text,#mermaid-0 .node .label text,#mermaid-0 .image-shape .label,#mermaid-0 .icon-shape .label{text-anchor:middle;}#mermaid-0 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-0 .rough-node .label,#mermaid-0 .node .label,#mermaid-0 .image-shape .label,#mermaid-0 .icon-shape .label{text-align:center;}#mermaid-0 .node.clickable{cursor:pointer;}#mermaid-0 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-0 .arrowheadPath{fill:#333333;}#mermaid-0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-0 .flowchart-link{stroke:#333333;fill:none;}#mermaid-0 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-0 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-0 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-0 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-0 .cluster text{fill:#333;}#mermaid-0 .cluster span{color:#333;}#mermaid-0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-0 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-0 rect.text{fill:none;stroke-width:0;}#mermaid-0 .icon-shape,#mermaid-0 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-0 .icon-shape p,#mermaid-0 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-0 .icon-shape .label rect,#mermaid-0 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-0 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-0 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-0 :root{--mermaid-font-family:arial,sans-serif;}</style><g><marker id="mermaid-0_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-0_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-0_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M459.262,62L459.262,66.167C459.262,70.333,459.262,78.667,459.262,86.333C459.262,94,459.262,101,459.262,104.5L459.262,108" id="L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6NDU5LjI2MTcxODc1LCJ5Ijo2Mn0seyJ4Ijo0NTkuMjYxNzE4NzUsInkiOjg3fSx7IngiOjQ1OS4yNjE3MTg3NSwieSI6MTEyfV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M359.449,155.156L322.541,161.13C285.633,167.104,211.816,179.052,174.908,188.526C138,198,138,205,138,208.5L138,212" id="L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6MzU5LjQ0OTIxODc1LCJ5IjoxNTUuMTU1ODMwODkxMzgyODZ9LHsieCI6MTM4LCJ5IjoxOTF9LHsieCI6MTM4LCJ5IjoyMTZ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M206.521,294L217.355,300.167C228.19,306.333,249.858,318.667,260.693,330.333C271.527,342,271.527,353,271.527,358.5L271.527,364" id="L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6MjA2LjUyMDYxMDYwODU1MjYzLCJ5IjoyOTR9LHsieCI6MjcxLjUyNzM0Mzc1LCJ5IjozMzF9LHsieCI6MjcxLjUyNzM0Mzc1LCJ5IjozNjh9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M122.736,294L120.322,300.167C117.908,306.333,113.081,318.667,110.668,335.5C108.254,352.333,108.254,373.667,108.254,395C108.254,416.333,108.254,437.667,108.254,459C108.254,480.333,108.254,501.667,108.254,523C108.254,544.333,108.254,565.667,128.467,584.257C148.68,602.847,189.107,618.693,209.32,626.617L229.533,634.54" id="L_C_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_E_0" data-points="W3sieCI6MTIyLjczNTU1NzE1NDYwNTI2LCJ5IjoyOTR9LHsieCI6MTA4LjI1MzkwNjI1LCJ5IjozMzF9LHsieCI6MTA4LjI1MzkwNjI1LCJ5IjozOTV9LHsieCI6MTA4LjI1MzkwNjI1LCJ5Ijo0NTl9LHsieCI6MTA4LjI1MzkwNjI1LCJ5Ijo1MjN9LHsieCI6MTA4LjI1MzkwNjI1LCJ5Ijo1ODd9LHsieCI6MjMzLjI1NzI5ODUxOTczNjgyLCJ5Ijo2MzZ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M386.387,636.279L412.283,628.066C438.178,619.853,489.97,603.426,515.866,584.547C541.762,565.667,541.762,544.333,541.762,523C541.762,501.667,541.762,480.333,541.762,459C541.762,437.667,541.762,416.333,541.762,395C541.762,373.667,541.762,352.333,541.762,329C541.762,305.667,541.762,280.333,541.762,257C541.762,233.667,541.762,212.333,535.715,197.855C529.669,183.378,517.575,175.755,511.529,171.944L505.482,168.133" id="L_E_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_E_B_0" data-points="W3sieCI6Mzg2LjM4NjcxODc1LCJ5Ijo2MzYuMjc5MDgxODk4ODAwMn0seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjU4N30seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjUyM30seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjQ1OX0seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjM5NX0seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjMzMX0seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjI1NX0seyJ4Ijo1NDEuNzYxNzE4NzUsInkiOjE5MX0seyJ4Ijo1MDIuMDk4MjU3MjExNTM4NDUsInkiOjE2Nn1d" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M320.915,422L332.195,428.167C343.474,434.333,366.034,446.667,377.314,458.333C388.594,470,388.594,481,388.594,486.5L388.594,492" id="L_D_F_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_F_0" data-points="W3sieCI6MzIwLjkxNDczMzg4NjcxODc1LCJ5Ijo0MjJ9LHsieCI6Mzg4LjU5Mzc1LCJ5Ijo0NTl9LHsieCI6Mzg4LjU5Mzc1LCJ5Ijo0OTZ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M247.967,422L242.585,428.167C237.204,434.333,226.442,446.667,221.061,463.5C215.68,480.333,215.68,501.667,215.68,523C215.68,544.333,215.68,565.667,224.469,584.06C233.259,602.453,250.838,617.906,259.628,625.633L268.417,633.359" id="L_D_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_E_0" data-points="W3sieCI6MjQ3Ljk2NjYxMzc2OTUzMTI1LCJ5Ijo0MjJ9LHsieCI6MjE1LjY3OTY4NzUsInkiOjQ1OX0seyJ4IjoyMTUuNjc5Njg3NSwieSI6NTIzfSx7IngiOjIxNS42Nzk2ODc1LCJ5Ijo1ODd9LHsieCI6MjcxLjQyMTcyMDgwNTkyMTA0LCJ5Ijo2MzZ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M477.253,550L497.503,556.167C517.752,562.333,558.251,574.667,578.501,586.333C598.75,598,598.75,609,598.75,614.5L598.75,620" id="L_F_G_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_F_G_0" data-points="W3sieCI6NDc3LjI1MzQxNzk2ODc1LCJ5Ijo1NTB9LHsieCI6NTk4Ljc1LCJ5Ijo1ODd9LHsieCI6NTk4Ljc1LCJ5Ijo2MjR9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M388.594,550L388.594,556.167C388.594,562.333,388.594,574.667,379.804,588.56C371.014,602.453,353.435,617.906,344.646,625.633L335.856,633.359" id="L_F_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_F_E_0" data-points="W3sieCI6Mzg4LjU5Mzc1LCJ5Ijo1NTB9LHsieCI6Mzg4LjU5Mzc1LCJ5Ijo1ODd9LHsieCI6MzMyLjg1MTcxNjY5NDA3ODk2LCJ5Ijo2MzZ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M598.75,702L598.75,706.167C598.75,710.333,598.75,718.667,598.75,726.333C598.75,734,598.75,741,598.75,744.5L598.75,748" id="L_G_H_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_G_H_0" data-points="W3sieCI6NTk4Ljc1LCJ5Ijo3MDJ9LHsieCI6NTk4Ljc1LCJ5Ijo3Mjd9LHsieCI6NTk4Ljc1LCJ5Ijo3NTJ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M598.75,806L598.75,810.167C598.75,814.333,598.75,822.667,603.264,830.575C607.778,838.482,616.805,845.965,621.319,849.706L625.833,853.447" id="L_H_I_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_H_I_0" data-points="W3sieCI6NTk4Ljc1LCJ5Ijo4MDZ9LHsieCI6NTk4Ljc1LCJ5Ijo4MzF9LHsieCI6NjI4LjkxMjYzNTIxNjM0NjIsInkiOjg1Nn1d" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M694.064,856L699.091,851.833C704.118,847.667,714.172,839.333,719.199,826.5C724.227,813.667,724.227,796.333,724.227,779C724.227,761.667,724.227,744.333,724.227,725C724.227,705.667,724.227,684.333,724.227,661C724.227,637.667,724.227,612.333,724.227,589C724.227,565.667,724.227,544.333,724.227,523C724.227,501.667,724.227,480.333,724.227,459C724.227,437.667,724.227,416.333,724.227,395C724.227,373.667,724.227,352.333,724.227,329C724.227,305.667,724.227,280.333,724.227,257C724.227,233.667,724.227,212.333,697.355,196.393C670.484,180.453,616.742,169.906,589.871,164.632L562.999,159.359" id="L_I_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_I_B_0" data-points="W3sieCI6Njk0LjA2MzkyNzI4MzY1MzgsInkiOjg1Nn0seyJ4Ijo3MjQuMjI2NTYyNSwieSI6ODMxfSx7IngiOjcyNC4yMjY1NjI1LCJ5Ijo3Nzl9LHsieCI6NzI0LjIyNjU2MjUsInkiOjcyN30seyJ4Ijo3MjQuMjI2NTYyNSwieSI6NjYzfSx7IngiOjcyNC4yMjY1NjI1LCJ5Ijo1ODd9LHsieCI6NzI0LjIyNjU2MjUsInkiOjUyM30seyJ4Ijo3MjQuMjI2NTYyNSwieSI6NDU5fSx7IngiOjcyNC4yMjY1NjI1LCJ5IjozOTV9LHsieCI6NzI0LjIyNjU2MjUsInkiOjMzMX0seyJ4Ijo3MjQuMjI2NTYyNSwieSI6MjU1fSx7IngiOjcyNC4yMjY1NjI1LCJ5IjoxOTF9LHsieCI6NTU5LjA3NDIxODc1LCJ5IjoxNTguNTg4NDQ3NzU5ODczODJ9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(271.52734375, 331)"><g class="label" data-id="L_C_D_0" transform="translate(-34.25, -12)"><foreignObject width="68.5" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Approved</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(108.25390625, 459)"><g class="label" data-id="L_C_E_0" transform="translate(-31.578125, -12)"><foreignObject width="63.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Rejected</p></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_E_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(388.59375, 459)"><g class="label" data-id="L_D_F_0" transform="translate(-34.25, -12)"><foreignObject width="68.5" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Approved</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(215.6796875, 523)"><g class="label" data-id="L_D_E_0" transform="translate(-31.578125, -12)"><foreignObject width="63.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Rejected</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(598.75, 587)"><g class="label" data-id="L_F_G_0" transform="translate(-34.25, -12)"><foreignObject width="68.5" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Approved</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(388.59375, 587)"><g class="label" data-id="L_F_E_0" transform="translate(-31.578125, -12)"><foreignObject width="63.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Rejected</p></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_G_H_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_H_I_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_I_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-0" transform="translate(459.26171875, 35)"><rect class="basic label-container" style="" x="-104.2734375" y="-27" width="208.546875" height="54"></rect><g class="label" style="" transform="translate(-74.2734375, -12)"><rect></rect><foreignObject width="148.546875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Page Created/Edited</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-B-1" transform="translate(459.26171875, 139)"><rect class="basic label-container" style="" x="-99.8125" y="-27" width="199.625" height="54"></rect><g class="label" style="" transform="translate(-69.8125, -12)"><rect></rect><foreignObject width="139.625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Submit for Approval</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C-3" transform="translate(138, 255)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Step 1: Content Owner Review</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-D-5" transform="translate(271.52734375, 395)"><rect class="basic label-container" style="" x="-128.2734375" y="-27" width="256.546875" height="54"></rect><g class="label" style="" transform="translate(-98.2734375, -12)"><rect></rect><foreignObject width="196.546875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Step 2: Compliance Review</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-E-7" transform="translate(302.13671875, 663)"><rect class="basic label-container" style="fill:#f8d7da !important;stroke:#dc3545 !important" x="-84.25" y="-27" width="168.5" height="54"></rect><g class="label" style="color:#721c24 !important" transform="translate(-54.25, -12)"><rect></rect><foreignObject width="108.5" height="24"><div style="color: rgb(114, 28, 36) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#721c24 !important" class="nodeLabel"><p>Author Revises</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F-11" transform="translate(388.59375, 523)"><rect class="basic label-container" style="" x="-106.3359375" y="-27" width="212.671875" height="54"></rect><g class="label" style="" transform="translate(-76.3359375, -12)"><rect></rect><foreignObject width="152.671875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Step 3: Final Sign-Off</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-G-15" transform="translate(598.75, 663)"><rect class="basic label-container" style="fill:#d4edda !important;stroke:#28a745 !important" x="-90.4765625" y="-39" width="180.953125" height="78"></rect><g class="label" style="color:#155724 !important" transform="translate(-60.4765625, -24)"><rect></rect><foreignObject width="120.953125" height="48"><div style="color: rgb(21, 87, 36) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#155724 !important" class="nodeLabel"><p>Approved ✓<br></br>(Version-Locked)</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-H-19" transform="translate(598.75, 779)"><rect class="basic label-container" style="" x="-73.59375" y="-27" width="147.1875" height="54"></rect><g class="label" style="" transform="translate(-43.59375, -12)"><rect></rect><foreignObject width="87.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Page Edited</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-I-21" transform="translate(661.48828125, 883)"><rect class="basic label-container" style="fill:#fff3cd !important;stroke:#ffc107 !important" x="-103.6953125" y="-27" width="207.390625" height="54"></rect><g class="label" style="color:#856404 !important" transform="translate(-73.6953125, -12)"><rect></rect><foreignObject width="147.390625" height="24"><div style="color: rgb(133, 100, 4) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#856404 !important" class="nodeLabel"><p>Stale ⚠ — Resubmit</p></span></div></foreignObject></g></g></g></g></g></svg>
+<p><em>A compliance approval workflow with three sequential steps. When an approved page is edited, the version-aware system flags it for resubmission — maintaining continuous compliance.</em></p>
+<h3 id="step-4-set-up-monitoring">Step 4: Set Up Monitoring</h3>
+<p>Use Workflow Analytics to track:</p>
+<ul>
+<li><strong>Approval rates</strong> — what percentage of submissions are approved on first review</li>
+<li><strong>Rejection patterns</strong> — which steps have the highest rejection rates (indicating potential training needs)</li>
+<li><strong>Time-to-approval</strong> — how long pages spend in each approval step</li>
+<li><strong>Outstanding approvals</strong> — pages waiting for review beyond your SLA</li>
+</ul>
+<p>Export these metrics on a schedule that aligns with your audit cycle — monthly, quarterly, or as defined by your compliance framework.</p>
+<h2 id="what-this-looks-like-during-an-audit">What This Looks Like During an Audit</h2>
+<p>When an auditor asks “show me your document approval process for Confluence,” you can provide:</p>
+<ol>
+<li><strong>Process documentation:</strong> Your workflow configuration showing defined approval steps and designated reviewers</li>
+<li><strong>Evidence of execution:</strong> Exported approval records showing actual approvals with timestamps, approver names, and version numbers</li>
+<li><strong>Monitoring evidence:</strong> Analytics exports showing approval rates, rejection patterns, and review cycle times over the audit period</li>
+<li><strong>Version control evidence:</strong> The link between approval decisions and specific page versions, demonstrating that edits trigger re-review</li>
+</ol>
+<p>This transforms the audit response from “we ask people to review things in Confluence” to a documented, evidenced, and measurable control.</p>
+<h2 id="data-residency-and-architecture">Data Residency and Architecture</h2>
+<p>For compliance teams evaluating tooling, the architecture matters:</p>
+<ul>
+<li><strong>Forge-hosted:</strong> ApprovalFlow runs entirely on Atlassian Forge infrastructure. No external servers, no data leaving Atlassian’s environment.</li>
+<li><strong>Zero external subprocessors:</strong> All data processing happens within the Atlassian tenant. This simplifies data processing agreements and reduces your vendor risk surface.</li>
+<li><strong>Atlassian-managed storage:</strong> Approval records are stored using Forge’s storage APIs within your Atlassian infrastructure.</li>
+</ul>
+<p>This architecture means adding ApprovalFlow does not introduce new data residency concerns or require updates to your Data Processing Agreement beyond your existing Atlassian relationship.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>ApprovalFlow is available on the <a href="https://marketplace.atlassian.com/apps/2350565795/approvalflow-for-confluence">Atlassian Marketplace</a> with a free tier for the first 10 users. For compliance teams evaluating the tool, this means you can run a proof of concept on a pilot space without procurement approval.</p>
+<p>For detailed setup instructions, see the <a href="https://docs.flowdence.io/approvalflow/docs/">ApprovalFlow documentation</a>. The <a href="https://blog.flowdence.io/posts/how-to-set-up-multi-step-approvals-in-confluence/">multi-step approvals tutorial</a> walks through configuring your first workflow end-to-end.</p>
+<h2 id="related-posts">Related Posts</h2>
+<ul>
+<li><a href="/posts/content-governance-in-confluence/">Content Governance in Confluence: Moving Beyond Page Restrictions</a></li>
+<li><a href="/posts/how-to-set-up-multi-step-approvals-in-confluence/">How to Set Up Multi-Step Approvals in Confluence</a></li>
+<li><a href="/posts/approvalflow-pricing-explained/">ApprovalFlow Pricing Explained</a></li>
+<li><a href="/posts/approvalflow-vs-comala-vs-appfox/">ApprovalFlow vs Comala vs AppFox: Confluence Approval Tools Compared</a></li>
+</ul> </article> <hr class="my-8 border-dashed">  <ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"> <li> <a href="/tags/approvalflow/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-2"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> approvalflow </a> </li><li> <a href="/tags/confluence/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-3"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> confluence </a> </li><li> <a href="/tags/compliance/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-4"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> compliance </a> </li><li> <a href="/tags/audit-trail/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-5"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> audit-trail </a> </li><li> <a href="/tags/governance/" class="flex items-center gap-0.5 border-b-2 border-dashed border-foreground hover:-mt-0.5 hover:border-accent hover:text-accent focus-visible:border-none focus-visible:text-accent text-sm" data-astro-transition-scope="astro-36ssibgs-6"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 9l14 0" /><path d="M5 15l14 0" /><path d="M11 4l-4 16" /><path d="M17 4l-4 16" /></svg> governance </a> </li> </ul> <div id="btt-btn-container" class="fixed end-4 bottom-8 z-50 md:sticky md:end-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"> <button data-button="back-to-top" class="group relative bg-background px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"> <span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block rotate-90 md:hidden"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <span class="sr-only text-sm group-hover:text-accent md:not-sr-only"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-4"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 5l0 14" /><path d="M16 9l-4 -4" /><path d="M8 9l4 -4" /></svg>
+Back To Top
+</span> </button> </div> <script data-astro-rerun>
+  /** Scrolls the document to the top when
+   * the "Back to Top" button is clicked. */
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    // Attach click event handler for back-to-top button
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
+    // Handle button visibility according to scroll position
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script> <div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">Share this post on:</span><div class="text-center"><a href="https://wa.me/?text=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post via WhatsApp" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg><span class="sr-only">Share this post via WhatsApp</span> </a><a href="https://www.facebook.com/sharer.php?u=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post on Facebook" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg><span class="sr-only">Share this post on Facebook</span> </a><a href="https://x.com/intent/post?url=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post on X" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg><span class="sr-only">Share this post on X</span> </a><a href="https://t.me/share/url?url=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post via Telegram" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg><span class="sr-only">Share this post via Telegram</span> </a><a href="https://pinterest.com/pin/create/button/?url=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post on Pinterest" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg><span class="sr-only">Share this post on Pinterest</span> </a><a href="mailto:?subject=See%20this%20post&#38;body=https://blog.flowdence.io/posts/compliance-ready-approval-workflows-in-confluence/" title="Share this post via email" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg><span class="sr-only">Share this post via email</span> </a></div></div> <hr class="my-6 border-dashed"> <!-- Previous/Next Post Buttons --> <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2"> <a href="/posts/the-complete-guide-to-confluence-approval-workflows" class="flex w-full gap-1 hover:opacity-75"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-none rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg> <div> <span>Previous Post</span> <div class="text-sm text-accent/85">The Complete Guide to Confluence Approval Workflows (2026)</div> </div> </a> <a href="/posts/version-aware-approvals-in-confluence" class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"> <div> <span>Next Post</span> <div class="text-sm text-accent/85">Version-Aware Approvals in Confluence: Why Approved Pages Need Version Tracking</div> </div> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block flex-none rtl:rotate-180"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg> </a> </div> </main> <footer class="app-layout mt-auto"> <div class="py-6 sm:py-4 border-t border-border flex flex-col items-center justify-between sm:flex-row-reverse"> <div class="flex flex-wrap items-center gap-1"> <a href="https://www.youtube.com/@flowdence" title="Flowdence Blog on YouTube" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg> <span class="sr-only">Flowdence Blog on YouTube</span>  </a><a href="https://x.com/flowdenceio" title="Flowdence Blog on X" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg> <span class="sr-only">Flowdence Blog on X</span>  </a><a href="https://www.linkedin.com/company/flowdence" title="Flowdence Blog on LinkedIn" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg> <span class="sr-only">Flowdence Blog on LinkedIn</span>  </a><a href="mailto:support@flowdence.io" title="Send an email to Flowdence Blog" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1">  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg> <span class="sr-only">Send an email to Flowdence Blog</span>  </a> </div> <nav class="my-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm" aria-label="Footer links"> <a href="https://flowdence.io" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Main Site</a> <a href="https://docs.flowdence.io" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Docs</a> <a href="https://flowdence.io/support" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-accent">Support</a> </nav> <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"> <span>Copyright &#169; 2026</span> <span class="hidden sm:inline">&nbsp;|&nbsp;</span> <span>All rights reserved.</span> </div> </div> </footer>  <!-- Load full theme logic --> <script type="module">const d="theme",r="light",m="dark";function i(){const e=localStorage.getItem(d);return e||(window.matchMedia("(prefers-color-scheme: dark)").matches?m:r)}let t=window.theme?.themeValue??i();function c(){localStorage.setItem(d,t),o()}function o(){document.firstElementChild?.setAttribute("data-theme",t),document.querySelector("#theme-btn")?.setAttribute("aria-label",t);const e=document.body;if(e){const n=window.getComputedStyle(e).backgroundColor;document.querySelector("meta[name='theme-color']")?.setAttribute("content",n)}}window.theme?(window.theme.setPreference=c,window.theme.reflectPreference=o):window.theme={themeValue:t,setPreference:c,reflectPreference:o,getTheme:()=>t,setTheme:e=>{t=e}};o();function s(){o(),document.querySelector("#theme-btn")?.addEventListener("click",()=>{t=t===r?m:r,window.theme?.setTheme(t),c()})}s();document.addEventListener("astro:after-swap",s);document.addEventListener("astro:before-swap",e=>{const a=e,n=document.querySelector("meta[name='theme-color']")?.getAttribute("content");n&&a.newDocument.querySelector("meta[name='theme-color']")?.setAttribute("content",n)});window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",({matches:e})=>{t=e?m:r,window.theme?.setTheme(t),c()});</script> </body> </html> <script data-astro-rerun>
+  /** Create a progress indicator
+   *  at the top */
+  function createProgressBar() {
+    // Create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    // Create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    // Append the progress bar to the progress container
+    progressContainer.appendChild(progressBar);
+
+    // Append the progress container to the document body or any other desired parent element
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  /** Update the progress bar
+   *  when user scrolls */
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  /** Attaches links to headings in the document,
+   *  allowing sharing of sections easily */
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  /** Attaches copy buttons to code blocks in the document,
+   * allowing users to copy code easily. */
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      // Check if --file-name-offset custom property exists
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      // Determine the top positioning class
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      // wrap codebock with relative parent element
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
