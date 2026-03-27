@@ -375,13 +375,21 @@ About
 <p><strong>Tip:</strong> The preflight endpoints are particularly valuable for CI/CD integration. Your automation can validate a change set before committing to the submission — no data is written during a preflight.</p>
 </blockquote>
 <h3 id="authentication-and-audit">Authentication and Audit</h3>
-<p>The API uses Atlassian’s 3LO OAuth with custom scopes:</p>
+<p>The API uses <a href="https://developer.atlassian.com/platform/forge/access-rest-apis-exposed-by-a-forge-app/">Atlassian’s 3LO OAuth</a> with two types of scopes:</p>
+<p><strong>Atlassian product scope (required):</strong></p>
+<ul>
+<li><code>read:forge-app:confluence</code> — Enables external API access to ApprovalFlow’s Forge endpoints.</li>
+</ul>
+<p><strong>ApprovalFlow custom scopes:</strong></p>
 <ul>
 <li><code>read:change-set:custom</code> — List and inspect change sets, run preflight checks.</li>
 <li><code>write:change-set:custom</code> — Create, update, archive, and submit change sets.</li>
 <li><code>read:approval:custom</code> — Preflight single pages.</li>
 <li><code>write:approval:custom</code> — Submit single pages.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> A site administrator must first enable REST APIs for ApprovalFlow via <strong>Atlassian Administration > Connected Apps</strong> before external API calls will work.</p>
+</blockquote>
 <p>Every API action is recorded in the audit trail with a <code>(via API)</code> marker and the OAuth client ID. Your team always knows whether a submission was initiated by a human or by automation.</p>
 <h2 id="workflow-ai-documentation-agent">Workflow: AI Documentation Agent</h2>
 <p>Here is how an AI-driven documentation workflow works with change sets end-to-end.</p>
