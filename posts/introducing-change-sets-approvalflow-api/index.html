@@ -438,14 +438,14 @@ About
 <h3 id="step-5-human-review">Step 5: Human Review</h3>
 <p>Product managers review the pages through the ApprovalFlow approval queue and page bylines. They see the shared context — they know these 6 pages all relate to PR-184 and why they changed. They approve or reject each page individually, and the change set rollup state updates automatically.</p>
 <div style="margin: 2rem 0;">
-<img src="/approvalflow/docs/assets/screenshots/approval-lifecycle/06-approver-pending-actions-panel-existing-page.png" alt="ApprovalFlow approver pending actions panel showing pages awaiting review with workflow step indicators" style="border-radius: 0.5rem; border: 1px solid #e5e7eb;">
-<p style="text-align: center; font-style: italic; color: #6b7280; margin-top: 0.5rem;">Approvers review pending pages from the actions panel, with workflow step context visible for each page.</p>
+<img src="/images/posts/change-sets/change-sets-tab-mockup.png" alt="ApprovalFlow Change Sets tab in Confluence showing a table of review bundles with rollup status lozenges — All Approved (green), In Review (orange), and Stale (purple) — along with page counts and action buttons" style="border-radius: 0.5rem; border: 1px solid #e5e7eb; max-width: 100%;">
+<p style="text-align: center; font-style: italic; color: #6b7280; margin-top: 0.5rem;">The Change Sets tab shows all review bundles in a space with rollup status, page counts, and quick actions.</p>
 </div>
 <h3 id="step-6-resolution">Step 6: Resolution</h3>
 <p>Once all pages are approved, the change set reaches <code>all_approved</code>. If any page is edited after approval (by the AI agent iterating, or by a human), the change set moves to <code>stale</code> — making it immediately clear that the approved state no longer reflects the current content.</p>
 <div style="margin: 2rem 0;">
-<img src="/approvalflow/docs/assets/screenshots/approval-lifecycle/08-approved-state-in-byline-existing-page.png" alt="ApprovalFlow approved status displayed in the Confluence page byline with version number" style="border-radius: 0.5rem; border: 1px solid #e5e7eb;">
-<p style="text-align: center; font-style: italic; color: #6b7280; margin-top: 0.5rem;">Approved pages show version-bound approval status directly in the Confluence byline.</p>
+<img src="/images/posts/change-sets/change-sets-detail-mockup.png" alt="ApprovalFlow Change Set detail modal showing PR-184 Auth token refresh update with per-page version tracking — approved pages with version numbers, one stale page showing version drift, rollup summary, and reference link to GitHub PR" style="border-radius: 0.5rem; border: 1px solid #e5e7eb; max-width: 100%;">
+<p style="text-align: center; font-style: italic; color: #6b7280; margin-top: 0.5rem;">The Change Set detail modal shows per-page approval status, version tracking, and stale detection — with the source PR linked as shared context.</p>
 </div>
 <h2 id="beyond-ai-workflows">Beyond AI Workflows</h2>
 <p>Change sets are not limited to AI-driven scenarios. They work for any situation where multiple pages change together:</p>
