@@ -317,7 +317,7 @@ Updated:
 <p><strong>Inconsistent policy ordering.</strong> Even when the same policies are applied, the order in which they execute can differ between environments. Policy ordering affects behavior — a CORS policy before authentication behaves differently than authentication before CORS.</p>
 <p>These blind spots persist because Anypoint Platform does not provide a built-in cross-environment comparison for security configuration. You can see what is applied to a single API in a single environment, but comparing across environments requires manual effort.</p>
 <h2 id="how-mulesight-surfaces-security-posture">How MuleSight Surfaces Security Posture</h2>
-<p>MuleSight’s <a href="https://flowdence.io/docs/mulesight/docs/docs/getting-started/api-security-posture/">API Security Posture</a> tab provides a purpose-built view for cross-environment security auditing. Here is how it works.</p>
+<p>MuleSight’s <a href="https://flowdence.io/docs/mulesight/docs/getting-started/api-security-posture/">API Security Posture</a> tab provides a purpose-built view for cross-environment security auditing. Here is how it works.</p>
 <h3 id="the-posture-overview">The Posture Overview</h3>
 <p>When you open the API Security Posture tab in the MuleSight Dashboard, you see a filterable list of all APIs discovered across your configured environments. Each row shows the API name, the environments where it is deployed, and a summary of its security configuration.</p>
 <p>Use the search and filter controls to narrow the view to the APIs you care about — filter by environment, by name, or by a specific API group.</p>
@@ -352,7 +352,7 @@ Updated:
 <h3 id="5-export-and-track">5. Export and Track</h3>
 <p>Export your findings as CSV for tracking in a spreadsheet, or as HTML for sharing in a report. If you run audits on a regular cadence, you can compare exports over time to see whether posture is improving or degrading.</p>
 <h3 id="6-document-and-share">6. Document and Share</h3>
-<p>Create a dedicated Confluence page for your API security posture audit results. Use <a href="https://flowdence.io/docs/mulesight/docs/docs/getting-started/macro-snapshots/">MuleSight snapshot macros</a> to embed live references to specific APIs, and attach the exported CSV/HTML as evidence.</p>
+<p>Create a dedicated Confluence page for your API security posture audit results. Use <a href="https://flowdence.io/docs/mulesight/docs/getting-started/macro-snapshots/">MuleSight snapshot macros</a> to embed live references to specific APIs, and attach the exported CSV/HTML as evidence.</p>
 <h2 id="what-this-replaces">What This Replaces</h2>
 <p>Without MuleSight, an API security posture audit looks like this:</p>
 <ol>
@@ -372,12 +372,12 @@ Updated:
 <p>MuleSight is available on the <a href="https://marketplace.atlassian.com/apps/970479047/mulesight-for-confluence">Atlassian Marketplace</a>. It is free for up to 10 users, $1.55/user/month for teams of 251–1,000 users, and includes a 30-day free trial on all plans. Setup requires:</p>
 <ol>
 <li>Installing MuleSight from the Marketplace</li>
-<li>Configuring a <a href="https://flowdence.io/docs/mulesight/docs/docs/installation-and-configuration/configuration/">read-only Connected App</a> in your MuleSoft Anypoint Platform with the required API Manager scopes</li>
+<li>Configuring a <a href="https://flowdence.io/docs/mulesight/docs/installation-and-configuration/configuration/">read-only Connected App</a> in your MuleSoft Anypoint Platform with the required API Manager scopes</li>
 <li>Adding your Connected App credentials in MuleSight space settings</li>
 <li>Running your first data sync</li>
 </ol>
 <p>The API Security Posture tab populates automatically once your environments are configured. No additional setup is needed beyond the initial Connected App configuration.</p>
-<p>For the complete setup walkthrough, see the <a href="https://flowdence.io/docs/mulesight/docs/docs/">MuleSight documentation</a>.</p>
+<p>For the complete setup walkthrough, see the <a href="https://flowdence.io/docs/mulesight/docs/">MuleSight documentation</a>.</p>
 <h2 id="related-posts">Related Posts</h2>
 <ul>
 <li><a href="/posts/detecting-mulesoft-environment-drift-using-confluence/">Detecting MuleSoft Environment Drift Using Confluence</a></li>
