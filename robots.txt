@@ -22,5 +22,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://blog.flowdence.io/sitemap-index.xml
-Host: blog.flowdence.io
+Sitemap: https://flowdence.io/blog/sitemap-index.xml
+Host: flowdence.io
