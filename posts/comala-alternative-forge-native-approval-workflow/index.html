@@ -508,7 +508,7 @@ About
 </blockquote>
 <h2 id="the-forge-native-advantage-explained">The Forge-Native Advantage, Explained</h2>
 <p>“Forge-native” isn’t just a label. Here’s what it means technically.</p>
-<p><strong>Your data stays inside Atlassian.</strong> ApprovalFlow uses Forge Storage (Forge KVS), which runs within Atlassian’s own infrastructure. Approval records, workflow definitions, and audit logs are stored alongside your Confluence data — not on a third-party server.</p>
+<p><strong>Your data stays inside Atlassian.</strong> ApprovalFlow uses Atlassian-managed Forge storage, which runs within Atlassian’s own infrastructure. Approval records, workflow definitions, and audit logs are stored alongside your Confluence data — not on a third-party server.</p>
 <p><strong>No external servers to trust (or audit).</strong> Connect apps run their own backend infrastructure. That means another vendor in your security review, another SOC 2 to validate, another data processing agreement to negotiate. Forge apps eliminate that dependency entirely.</p>
 <p><strong>Atlassian’s investment direction is Forge.</strong> Connect is still supported, but Atlassian has been clear: <a href="https://developer.atlassian.com/platform/forge/">Forge is the future of their app platform</a>. New platform features, performance improvements, and security capabilities are landing in Forge first.</p>
 <p><strong>Restricted egress.</strong> Forge apps declare exactly which external domains they can call. For ApprovalFlow, that list is empty — it talks to Confluence APIs and nothing else. You can verify this in the <a href="https://flowdence.io/docs/docs/product-specific-policies/approvalflow/data-handling-disclosure/">ApprovalFlow Data Handling Disclosure</a>.</p>
