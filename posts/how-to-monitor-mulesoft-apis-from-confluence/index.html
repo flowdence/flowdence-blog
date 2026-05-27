@@ -373,41 +373,8 @@ Updated:
 <p>If your Confluence instance has Rovo enabled, MuleSight includes a Specialist agent that can answer natural-language questions about your MuleSoft inventory. Ask questions like “Which APIs are deployed to production?” or “What policies are applied to the Order API?” and get answers drawn from cached snapshot data.</p>
 <p>The Rovo agent uses cached data by default to avoid unnecessary API calls. It always reports the snapshot timestamp in its answers so you know how fresh the data is. If you need current data, you can confirm a live refresh before the agent answers.</p>
 <p>The agent is space-scoped — it only accesses data for the Confluence space you are working in — and it returns “no data” rather than guessing when information is not available.</p>
-<div style="margin: 2rem 0; border: 1px solid #d9e2ef; border-radius: 8px; background: #f8fbff; padding: 1rem;">
-<div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: stretch;">
-<div style="flex: 1 1 280px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 1rem; box-shadow: 0 8px 24px rgba(9, 30, 66, 0.08);">
-<div style="display: flex; justify-content: space-between; gap: 0.75rem; align-items: center; margin-bottom: 0.85rem;">
-<strong style="font-size: 0.95rem;">MuleSight Specialist</strong>
-<span style="font-size: 0.72rem; color: #0f766e; background: #e6fffb; border: 1px solid #99f6e4; border-radius: 999px; padding: 0.18rem 0.5rem;">Cached</span>
-</div>
-<div style="border-left: 3px solid #0c66e4; padding-left: 0.75rem; margin-bottom: 0.75rem;">
-<div style="font-size: 0.78rem; color: #5e6c84; margin-bottom: 0.2rem;">Question</div>
-<div style="font-size: 0.9rem; color: #172b4d;">Which APIs are inactive in production?</div>
-</div>
-<div style="border-left: 3px solid #22a06b; padding-left: 0.75rem;">
-<div style="font-size: 0.78rem; color: #5e6c84; margin-bottom: 0.2rem;">Answer pattern</div>
-<div style="font-size: 0.9rem; color: #172b4d;">Results, snapshot timestamp, and refresh option if the cache is stale.</div>
-</div>
-</div>
-<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-wrap: wrap; gap: 0.75rem;">
-<div style="flex: 1 1 130px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.78rem; color: #5e6c84;">Inventory</div>
-<strong style="font-size: 0.9rem;">CloudHub apps and API Manager APIs</strong>
-</div>
-<div style="flex: 1 1 130px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.78rem; color: #5e6c84;">Security</div>
-<strong style="font-size: 0.9rem;">Policies, tiers, and contracts</strong>
-</div>
-<div style="flex: 1 1 130px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.78rem; color: #5e6c84;">Endpoints</div>
-<strong style="font-size: 0.9rem;">Cached methods and paths</strong>
-</div>
-<div style="flex: 1 1 130px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.78rem; color: #5e6c84;">Freshness</div>
-<strong style="font-size: 0.9rem;">Explicit refresh confirmation</strong>
-</div>
-</div>
-</div>
+<div style="margin: 2rem 0;">
+<img src="/images/posts/mulesoft-monitoring/mulesight-rovo-cached-queries.png" alt="AI-generated MuleSight Rovo visual showing the MuleSight Specialist answering cached inventory questions from CloudHub apps, API Manager, security posture, and Exchange endpoint context" style="border-radius: 8px; border: 1px solid #e2e8f0; max-width: 100%;">
 </div>
 <p><em>A source-verified MuleSight Rovo workflow: the agent answers from cached, space-scoped MuleSoft data and asks before refreshing live data.</em></p>
 <h2 id="setting-up-mulesight-for-monitoring">Setting Up MuleSight for Monitoring</h2>
