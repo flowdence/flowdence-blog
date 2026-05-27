@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url>
 <loc>https://flowdence.io/blog/</loc>
-<lastmod>2026-05-25T07:30:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/about/</loc>
@@ -46,11 +46,11 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/from-dashboard-to-documentation-grafanasight-for-platform-teams/</loc>
-<lastmod>2026-05-22T14:00:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/grafana-alerts-in-confluence-real-time-service-health/</loc>
-<lastmod>2026-05-22T14:00:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/how-to-audit-mulesoft-api-security-posture-from-confluence/</loc>
@@ -62,7 +62,7 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/how-to-monitor-mulesoft-apis-from-confluence/</loc>
-<lastmod>2026-03-19T00:00:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/how-to-set-up-multi-step-approvals-in-confluence/</loc>
@@ -78,15 +78,15 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/meet-the-grafanasight-rovo-specialist/</loc>
-<lastmod>2026-05-22T14:00:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/mulesight-surfaces-integration-failures/</loc>
-<lastmod>2026-03-21T00:00:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/stop-screenshotting-grafana-dashboards/</loc>
-<lastmod>2026-05-25T07:30:00.000Z</lastmod>
+<lastmod>2026-05-27T00:00:00.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/the-complete-guide-to-confluence-approval-workflows/</loc>
