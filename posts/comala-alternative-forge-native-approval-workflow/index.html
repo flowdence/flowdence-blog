@@ -361,130 +361,46 @@ About
 <p>Forge-native apps are different by design:</p>
 <ul>
 <li>Code runs <strong>inside Atlassian’s infrastructure</strong> — no external servers</li>
-<li>Data is stored in Atlassian’s own storage layer (Forge Storage)</li>
+<li>Data is stored in Atlassian-managed Forge storage</li>
 <li>Egress is restricted — the app can only call explicitly whitelisted external domains</li>
 <li>Atlassian is investing heavily in Forge as the future of their app platform</li>
 </ul>
 <p>For teams that care about data residency, vendor risk, or simply reducing their third-party attack surface, this is a meaningful architectural difference — not marketing.</p>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0;">
-<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1.2rem; background: #f8f9fb;">
-<h4 style="margin: 0 0 0.6rem; color: #8b95a5; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Connect Architecture (Comala)</h4>
-<div style="text-align: center; line-height: 1.8; font-size: 0.9rem;">
-<div style="background: #e8ecf1; border-radius: 8px; padding: 0.4rem; margin-bottom: 0.3rem;">Your Confluence Cloud</div>
-<div>↕</div>
-<div style="background: #fceaeb; border-radius: 8px; padding: 0.4rem; margin-bottom: 0.3rem; border: 1px dashed #e8a0a4;">Vendor External Servers</div>
-<div>↕</div>
-<div style="background: #e8ecf1; border-radius: 8px; padding: 0.4rem;">Vendor Database</div>
-</div>
-<p style="margin: 0.6rem 0 0; font-size: 0.78rem; color: #8b95a5; text-align: center;">Data leaves Atlassian infrastructure</p>
-</div>
-<div style="border: 1px solid #b8dce8; border-radius: 12px; padding: 1.2rem; background: #f0f9fc;">
-<h4 style="margin: 0 0 0.6rem; color: #1288b7; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Forge Architecture (ApprovalFlow)</h4>
-<div style="text-align: center; line-height: 1.8; font-size: 0.9rem;">
-<div style="background: #d4eef7; border-radius: 8px; padding: 0.4rem; margin-bottom: 0.3rem;">Your Confluence Cloud</div>
-<div>↕</div>
-<div style="background: #d4eef7; border-radius: 8px; padding: 0.4rem; margin-bottom: 0.3rem;">Forge Runtime (Atlassian Infra)</div>
-<div>↕</div>
-<div style="background: #d4eef7; border-radius: 8px; padding: 0.4rem;">Forge Storage (Atlassian Infra)</div>
-</div>
-<p style="margin: 0.6rem 0 0; font-size: 0.78rem; color: #1288b7; text-align: center;">Everything stays inside Atlassian</p>
+<div style="margin: 2rem 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem;">
+<div style="border: 1px solid #f5b5ad; border-left: 4px solid #dc3545; border-radius: 8px; padding: 1rem; background: #fff5f5;"><strong>Connect app pattern</strong><br><span style="font-size: 0.9rem; color: #44546f;">Confluence communicates with vendor-operated external servers and vendor-managed storage.</span></div>
+<div style="border: 1px solid #9ed5e5; border-left: 4px solid #1288b7; border-radius: 8px; padding: 1rem; background: #e9f7fb;"><strong>Forge-native pattern</strong><br><span style="font-size: 0.9rem; color: #44546f;">App code runs on Atlassian Forge with Atlassian-managed storage and declared egress.</span></div>
 </div>
 </div>
-<p><em>Connect apps route your data through external vendor servers. Forge apps run entirely inside Atlassian’s infrastructure — no external egress, no third-party data storage.</em></p>
+*Connect apps route your data through external vendor servers. Forge apps run entirely inside Atlassian's infrastructure — no external egress, no third-party data storage.*
 <h2 id="what-approvalflow-does-differently">What ApprovalFlow Does Differently</h2>
 <p><a href="https://marketplace.atlassian.com/apps/2350565795/approvalflow-for-confluence">ApprovalFlow for Confluence</a> takes a deliberately simpler approach to content approval. Here’s what that looks like in practice.</p>
 <h3 id="feature-comparison">Feature Comparison</h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Capability</th><th>Comala Document Management</th><th>ApprovalFlow</th></tr></thead><tbody><tr><td><strong>Architecture</strong></td><td>Connect (external servers)</td><td>Forge-native (Atlassian infrastructure)</td></tr><tr><td><strong>Data storage</strong></td><td>Vendor infrastructure</td><td>Atlassian Forge Storage</td></tr><tr><td><strong>Approval workflows</strong></td><td>Unlimited, fully custom</td><td>Single and multi-step</td></tr><tr><td><strong>Byline integration</strong></td><td>Via macro/panel</td><td>Native byline actions</td></tr><tr><td><strong>Approval queue</strong></td><td>Activity report</td><td>Dedicated approval queue</td></tr><tr><td><strong>Audit trail</strong></td><td>Full activity trail</td><td>Full audit trail per page, space, and global scope</td></tr><tr><td><strong>Analytics dashboard</strong></td><td>Reports</td><td>Real-time workflow analytics with trends</td></tr><tr><td><strong>Version tracking</strong></td><td>Document versioning</td><td>Version-aware per page version</td></tr><tr><td><strong>E-signatures</strong></td><td>Supported</td><td>Not yet available</td></tr><tr><td><strong>Conditional logic</strong></td><td>Supported</td><td>Not yet available</td></tr><tr><td><strong>Expiry dates</strong></td><td>Supported</td><td>Not yet available</td></tr><tr><td><strong>Workflow scope</strong></td><td>Global workflows</td><td>Multi-space scope per workflow</td></tr><tr><td><strong>Page access restriction</strong></td><td>Can restrict access</td><td>Soft workflow (pages stay viewable)</td></tr><tr><td><strong>Setup time</strong></td><td>Hours to days</td><td>Minutes</td></tr><tr><td><strong>Server/DC support</strong></td><td>Supported</td><td>Cloud only</td></tr><tr><td><strong>Hosting</strong></td><td>Cloud + DC + Server</td><td>Cloud (Forge)</td></tr></tbody></table>
+<div style="max-width: 100%; overflow-x: auto;">
+<table>
+<thead>
+<tr><th>Capability</th><th>Comala Document Management</th><th>ApprovalFlow</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Architecture</strong></td><td>Connect (external servers)</td><td>Forge-native (Atlassian infrastructure)</td></tr>
+<tr><td><strong>Data storage</strong></td><td>Vendor infrastructure</td><td>Atlassian-managed Forge storage</td></tr>
+<tr><td><strong>Approval workflows</strong></td><td>Unlimited, fully custom</td><td>Single and multi-step</td></tr>
+<tr><td><strong>Byline integration</strong></td><td>Via macro/panel</td><td>Native byline actions</td></tr>
+<tr><td><strong>Approval queue</strong></td><td>Activity report</td><td>Dedicated approval queue</td></tr>
+<tr><td><strong>Audit trail</strong></td><td>Full activity trail</td><td>Full audit trail per page, space, and global scope</td></tr>
+<tr><td><strong>Analytics dashboard</strong></td><td>Reports</td><td>Real-time workflow analytics with trends</td></tr>
+<tr><td><strong>Version tracking</strong></td><td>Document versioning</td><td>Version-aware per page version</td></tr>
+<tr><td><strong>E-signatures</strong></td><td>Supported</td><td>Not yet available</td></tr>
+<tr><td><strong>Conditional logic</strong></td><td>Supported</td><td>Not yet available</td></tr>
+<tr><td><strong>Expiry dates</strong></td><td>Supported</td><td>Not yet available</td></tr>
+<tr><td><strong>Workflow scope</strong></td><td>Global workflows</td><td>Multi-space scope per workflow</td></tr>
+<tr><td><strong>Page access restriction</strong></td><td>Can restrict access</td><td>Soft workflow (pages stay viewable)</td></tr>
+<tr><td><strong>Setup time</strong></td><td>Hours to days</td><td>Minutes</td></tr>
+<tr><td><strong>Server/DC support</strong></td><td>Supported</td><td>Cloud only</td></tr>
+<tr><td><strong>Hosting</strong></td><td>Cloud + DC + Server</td><td>Cloud (Forge)</td></tr>
+</tbody>
+</table>
+</div>
 <h3 id="where-approvalflow-wins">Where ApprovalFlow Wins</h3>
 <ul>
 <li><strong>Setup speed</strong> — Define a workflow with named approvers, assign it to a space, done. Authors submit from the byline. No workflow markup language to learn.</li>
@@ -539,33 +455,24 @@ About
 <li>E-signature records (ApprovalFlow does not currently support e-signatures)</li>
 </ul>
 <h3 id="what-youll-need-to-do">What You’ll Need to Do</h3>
-<div style="display: flex; gap: 0.8rem; margin: 1.5rem 0; flex-wrap: wrap;">
-<div style="flex: 1; min-width: 200px; border: 1px solid #d7dde7; border-radius: 10px; padding: 0.9rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">1</div>
-<strong style="font-size: 0.88rem;">Map Workflows</strong>
-<p style="margin: 0.3rem 0 0; font-size: 0.8rem; color: #6b7a8d;">List which spaces use which Comala workflows and what steps they have</p>
-</div>
-<div style="flex: 1; min-width: 200px; border: 1px solid #d7dde7; border-radius: 10px; padding: 0.9rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">2</div>
-<strong style="font-size: 0.88rem;">Recreate in ApprovalFlow</strong>
-<p style="margin: 0.3rem 0 0; font-size: 0.8rem; color: #6b7a8d;">Define steps, assign approvers, apply to space</p>
-</div>
-<div style="flex: 1; min-width: 200px; border: 1px solid #d7dde7; border-radius: 10px; padding: 0.9rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">3</div>
-<strong style="font-size: 0.88rem;">Export History</strong>
-<p style="margin: 0.3rem 0 0; font-size: 0.8rem; color: #6b7a8d;">Save Comala audit trails before decommissioning</p>
-</div>
-<div style="flex: 1; min-width: 200px; border: 1px solid #d7dde7; border-radius: 10px; padding: 0.9rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.6rem; margin-bottom: 0.3rem;">4</div>
-<strong style="font-size: 0.88rem;">Communicate</strong>
-<p style="margin: 0.3rem 0 0; font-size: 0.8rem; color: #6b7a8d;">Brief the team on byline actions vs Comala panels</p>
+<div style="margin: 2rem 0;">
+<div role="img" aria-label="Four practical switching steps from Comala to ApprovalFlow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem;">
+<div style="border: 1px solid #d7dde7; border-left: 4px solid #6c757d; border-radius: 8px; padding: 1rem; background: #f8f9fb;"><strong>1. Map workflows</strong><br><span style="font-size: 0.9rem; color: #44546f;">List spaces, steps, and approvers.</span></div>
+<div style="border: 1px solid #b6d4fe; border-left: 4px solid #0d6efd; border-radius: 8px; padding: 1rem; background: #f0f6ff;"><strong>2. Recreate steps</strong><br><span style="font-size: 0.9rem; color: #44546f;">Define approvers and modes.</span></div>
+<div style="border: 1px solid #ffe08a; border-left: 4px solid #ffc107; border-radius: 8px; padding: 1rem; background: #fff8e6;"><strong>3. Export history</strong><br><span style="font-size: 0.9rem; color: #44546f;">Keep legacy evidence.</span></div>
+<div style="border: 1px solid #b7dfc0; border-left: 4px solid #28a745; border-radius: 8px; padding: 1rem; background: #f0faf3;"><strong>4. Brief the team</strong><br><span style="font-size: 0.9rem; color: #44546f;">Explain byline actions.</span></div>
 </div>
 </div>
-<p><em>For step-by-step setup instructions, see <a href="/posts/how-to-set-up-multi-step-approvals-in-confluence/">How to Set Up Multi-Step Approvals in Confluence</a>.</em></p>
+*For step-by-step setup instructions, see [How to Set Up Multi-Step Approvals in Confluence](/posts/how-to-set-up-multi-step-approvals-in-confluence/).*
 <p>For a team with 5-10 spaces using standard review-and-approve workflows, expect a few hours of setup, not days.</p>
 <h3 id="migration-path-comala-dc-vs-approvalflow-cloud">Migration Path: Comala DC vs. ApprovalFlow Cloud</h3>
 <p>The following diagram compares the typical migration path for teams moving from Comala on Data Center to Cloud, versus starting fresh with a Forge-native approach:</p>
-<svg id="mermaid-0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 1276.1875px;" viewBox="0 0 1276.1875 929" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-0{font-family:arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-0 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-0 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-0 .error-icon{fill:#552222;}#mermaid-0 .error-text{fill:#552222;stroke:#552222;}#mermaid-0 .edge-thickness-normal{stroke-width:1px;}#mermaid-0 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-0 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-0 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-0 .marker{fill:#333333;stroke:#333333;}#mermaid-0 .marker.cross{stroke:#333333;}#mermaid-0 svg{font-family:arial,sans-serif;font-size:16px;}#mermaid-0 p{margin:0;}#mermaid-0 .label{font-family:arial,sans-serif;color:#333;}#mermaid-0 .cluster-label text{fill:#333;}#mermaid-0 .cluster-label span{color:#333;}#mermaid-0 .cluster-label span p{background-color:transparent;}#mermaid-0 .label text,#mermaid-0 span{fill:#333;color:#333;}#mermaid-0 .node rect,#mermaid-0 .node circle,#mermaid-0 .node ellipse,#mermaid-0 .node polygon,#mermaid-0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-0 .rough-node .label text,#mermaid-0 .node .label text,#mermaid-0 .image-shape .label,#mermaid-0 .icon-shape .label{text-anchor:middle;}#mermaid-0 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-0 .rough-node .label,#mermaid-0 .node .label,#mermaid-0 .image-shape .label,#mermaid-0 .icon-shape .label{text-align:center;}#mermaid-0 .node.clickable{cursor:pointer;}#mermaid-0 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-0 .arrowheadPath{fill:#333333;}#mermaid-0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-0 .flowchart-link{stroke:#333333;fill:none;}#mermaid-0 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-0 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-0 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-0 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-0 .cluster text{fill:#333;}#mermaid-0 .cluster span{color:#333;}#mermaid-0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-0 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-0 rect.text{fill:none;stroke-width:0;}#mermaid-0 .icon-shape,#mermaid-0 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-0 .icon-shape p,#mermaid-0 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-0 .icon-shape .label rect,#mermaid-0 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-0 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-0 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-0 :root{--mermaid-font-family:arial,sans-serif;}</style><g><marker id="mermaid-0_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-0_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-0_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-0_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="MIG" data-look="classic"><rect style="fill:#fff3cd !important;stroke:#d4a843 !important" x="438" y="571" width="830.1875" height="335"></rect><g class="cluster-label" transform="translate(801.5078125, 571)"><foreignObject width="103.171875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel" style="color:#333 !important"><p>Migration Path</p></span></div></foreignObject></g></g><g class="cluster" id="DC" data-look="classic"><rect style="fill:#fceaeb !important;stroke:#e8a0a4 !important" x="8" y="583" width="380" height="338"></rect><g class="cluster-label" transform="translate(113.953125, 583)"><foreignObject width="168.09375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel" style="color:#333 !important"><p>Comala on Data Center</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M308.313,645L321.594,645C334.875,645,361.438,645,378.885,645C396.333,645,404.667,645,413,645C421.333,645,429.667,645,437.333,645C445,645,452,645,455.5,645L459,645" id="L_C1_M1_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C1_M1_0" data-points="W3sieCI6MzA4LjMxMjUsInkiOjY0NX0seyJ4IjozODgsInkiOjY0NX0seyJ4Ijo0MTMsInkiOjY0NX0seyJ4Ijo0MzgsInkiOjY0NX0seyJ4Ijo0NjMsInkiOjY0NX1d" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M319.43,755L330.858,755C342.286,755,365.143,755,380.738,755C396.333,755,404.667,755,413,755C421.333,755,429.667,755,445.621,758.955C461.576,762.909,485.151,770.819,496.939,774.773L508.727,778.728" id="L_C2_M2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C2_M2_0" data-points="W3sieCI6MzE5LjQyOTY4NzUsInkiOjc1NX0seyJ4IjozODgsInkiOjc1NX0seyJ4Ijo0MTMsInkiOjc1NX0seyJ4Ijo0MzgsInkiOjc1NX0seyJ4Ijo1MTIuNTE5MjMwNzY5MjMwNywieSI6NzgwfV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M286.688,859L303.573,859C320.458,859,354.229,859,375.281,859C396.333,859,404.667,859,413,859C421.333,859,429.667,859,445.621,855.045C461.576,851.091,485.151,843.181,496.939,839.227L508.727,835.272" id="L_C3_M2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C3_M2_0" data-points="W3sieCI6Mjg2LjY4NzUsInkiOjg1OX0seyJ4IjozODgsInkiOjg1OX0seyJ4Ijo0MTMsInkiOjg1OX0seyJ4Ijo0MzgsInkiOjg1OX0seyJ4Ijo1MTIuNTE5MjMwNzY5MjMwNywieSI6ODM0fV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M723,645L727.167,645C731.333,645,739.667,645,759.426,655.462C779.184,665.924,810.369,686.848,825.961,697.309L841.553,707.771" id="L_M1_M3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_M1_M3_0" data-points="W3sieCI6NzIzLCJ5Ijo2NDV9LHsieCI6NzQ4LCJ5Ijo2NDV9LHsieCI6ODQ0Ljg3NSwieSI6NzEwfV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M720.063,807L724.719,807C729.375,807,738.688,807,751.182,804.067C763.677,801.134,779.353,795.268,787.191,792.335L795.03,789.402" id="L_M2_M3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_M2_M3_0" data-points="W3sieCI6NzIwLjA2MjUsInkiOjgwN30seyJ4Ijo3NDgsInkiOjgwN30seyJ4Ijo3OTguNzc1ODYyMDY4OTY1NiwieSI6Nzg4fV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M1033,749L1037.167,749C1041.333,749,1049.667,749,1057.333,749C1065,749,1072,749,1075.5,749L1079,749" id="L_M3_M4_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_M3_M4_0" data-points="W3sieCI6MTAzMywieSI6NzQ5fSx7IngiOjEwNTgsInkiOjc0OX0seyJ4IjoxMDgzLCJ5Ijo3NDl9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_C1_M1_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C2_M2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C3_M2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_M1_M3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_M2_M3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_M3_M4_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="root" transform="translate(25, 0)"><g class="clusters"><g class="cluster" id="AF" data-look="classic"><rect style="fill:#d4eef7 !important;stroke:#1288b7 !important" x="8" y="8" width="330" height="540"></rect><g class="cluster-label" transform="translate(90.2890625, 8)"><foreignObject width="165.421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel" style="color:#333 !important"><p>ApprovalFlow on Forge</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M173,99.5L173,105.75C173,112,173,124.5,173,136.333C173,148.167,173,159.333,173,164.917L173,170.5" id="L_A1_A2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A1_A2_0" data-points="W3sieCI6MTczLCJ5Ijo5OS41fSx7IngiOjE3MywieSI6MTM3fSx7IngiOjE3MywieSI6MTc0LjV9XQ==" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M173,252.5L173,258.75C173,265,173,277.5,173,289.333C173,301.167,173,312.333,173,317.917L173,323.5" id="L_A2_A3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A2_A3_0" data-points="W3sieCI6MTczLCJ5IjoyNTIuNX0seyJ4IjoxNzMsInkiOjI5MH0seyJ4IjoxNzMsInkiOjMyNy41fV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path><path d="M173,381.5L173,387.75C173,394,173,406.5,173,418.333C173,430.167,173,441.333,173,446.917L173,452.5" id="L_A3_A4_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A3_A4_0" data-points="W3sieCI6MTczLCJ5IjozODEuNX0seyJ4IjoxNzMsInkiOjQxOX0seyJ4IjoxNzMsInkiOjQ1Ni41fV0=" marker-end="url(#mermaid-0_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A1_A2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_A2_A3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_A3_A4_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A1-7" transform="translate(173, 72.5)"><rect class="basic label-container" style="" x="-114.921875" y="-27" width="229.84375" height="54"></rect><g class="label" style="" transform="translate(-84.921875, -12)"><rect></rect><foreignObject width="169.84375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Install from Marketplace</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-A2-8" transform="translate(173, 213.5)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Define Workflow Steps + Approvers</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-A3-9" transform="translate(173, 354.5)"><rect class="basic label-container" style="" x="-91.8125" y="-27" width="183.625" height="54"></rect><g class="label" style="" transform="translate(-61.8125, -12)"><rect></rect><foreignObject width="123.625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Assign to Spaces</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-A4-10" transform="translate(173, 483.5)"><rect class="basic label-container" style="" x="-121.15625" y="-27" width="242.3125" height="54"></rect><g class="label" style="" transform="translate(-91.15625, -12)"><rect></rect><foreignObject width="182.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Authors Submit via Byline</p></span></div></foreignObject></g></g></g></g><g class="node default" id="flowchart-C1-0" transform="translate(198, 645)"><rect class="basic label-container" style="" x="-110.3125" y="-27" width="220.625" height="54"></rect><g class="label" style="" transform="translate(-80.3125, -12)"><rect></rect><foreignObject width="160.625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Comala DC Workflows</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C2-1" transform="translate(198, 755)"><rect class="basic label-container" style="" x="-121.4296875" y="-27" width="242.859375" height="54"></rect><g class="label" style="" transform="translate(-91.4296875, -12)"><rect></rect><foreignObject width="182.859375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Custom Workflow Markup</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C3-2" transform="translate(198, 859)"><rect class="basic label-container" style="" x="-88.6875" y="-27" width="177.375" height="54"></rect><g class="label" style="" transform="translate(-58.6875, -12)"><rect></rect><foreignObject width="117.375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Approval History</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-M1-3" transform="translate(593, 645)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Run Cloud Migration Assistant</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-M2-4" transform="translate(593, 807)"><rect class="basic label-container" style="" x="-127.0625" y="-27" width="254.125" height="54"></rect><g class="label" style="" transform="translate(-97.0625, -12)"><rect></rect><foreignObject width="194.125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Workflows Do NOT Migrate</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-M3-5" transform="translate(903, 749)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Rebuild in Cloud Comala or AppFox</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-M4-6" transform="translate(1163.09375, 749)"><rect class="basic label-container" style="" x="-80.09375" y="-27" width="160.1875" height="54"></rect><g class="label" style="" transform="translate(-50.09375, -12)"><rect></rect><foreignObject width="100.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Re-train Team</p></span></div></foreignObject></g></g></g></g></g></svg>
+<div style="margin: 2rem 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem;">
+<div style="border: 1px solid #f5b5ad; border-left: 4px solid #dc3545; border-radius: 8px; padding: 1rem; background: #fff5f5;"><strong>Comala Data Center to Cloud</strong><br><span style="font-size: 0.9rem; color: #44546f;">Run migration, rebuild workflow definitions, preserve exported history, and retrain users.</span></div>
+<div style="border: 1px solid #9ed5e5; border-left: 4px solid #1288b7; border-radius: 8px; padding: 1rem; background: #e9f7fb;"><strong>ApprovalFlow on Forge</strong><br><span style="font-size: 0.9rem; color: #44546f;">Install from Marketplace, define steps and approvers, assign workflows to spaces, submit from the byline.</span></div>
+</div>
+</div>
 <p><em>Left path: migrating Comala from DC to Cloud requires rebuilding workflows from scratch — definitions, markup, and history don’t carry over. Right path: ApprovalFlow setup is a clean start with no legacy baggage.</em></p>
 <h3 id="operational-visibility-after-the-switch">Operational Visibility After the Switch</h3>
 <p>Once your workflows are running, ApprovalFlow gives you centralised visibility across all approval activity.</p>
@@ -599,7 +506,6 @@ About
 <p>If your approval workflow is “author writes, reviewer approves, content is final,” and you want that process to run natively inside Atlassian’s infrastructure with zero external dependencies, a Forge-native approach is worth evaluating.</p>
 <p><a href="https://marketplace.atlassian.com/apps/2350565795/approvalflow-for-confluence">Try ApprovalFlow for Confluence on the Atlassian Marketplace →</a></p>
 <p>Learn more: <a href="https://flowdence.io/products/approvalflow">Product overview</a> · <a href="https://flowdence.io/docs/approvalflow/docs/">Full documentation</a> · <a href="https://flowdence.io/docs/docs/product-specific-policies/approvalflow/data-handling-disclosure/">Data handling disclosure</a></p>
-<hr>
 <p><em>ApprovalFlow is built by <a href="https://flowdence.io">Flowdence</a>, an Atlassian Marketplace partner. We build Forge-native Confluence Cloud apps for teams that need content governance without complexity.</em></p>
 <h2 id="related-reading">Related Reading</h2>
 <ul>
