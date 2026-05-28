@@ -320,29 +320,20 @@ Updated:
 </ul>
 <p>The agent uses MuleSight’s cached snapshots (not live calls) by default, and always reports the snapshot timestamp so you know how fresh the data is. If you need current data, you can ask the agent to refresh — but it requires explicit confirmation before making any live API calls.</p>
 <p>Non-hallucination guardrails are built in: if the agent does not have data to answer a question, it says so and recommends refreshing or checking the dashboard directly.</p>
-<div style="margin: 2rem 0; border: 1px solid #d9e2ef; border-radius: 8px; background: #f8fbff; padding: 1rem;">
-<div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-<div style="flex: 1 1 140px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.75rem; color: #5e6c84; margin-bottom: 0.35rem;">Ask</div>
-<strong style="font-size: 0.9rem;">Inventory and status questions</strong>
+<div style="margin: 2rem 0;">
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; background: #f8fbff; padding: 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.75rem;">
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; background: #ffffff; padding: 0.85rem;"><span style="display: block; color: #5e6c84; font-size: 0.8rem;">Ask</span><strong>Inventory and status questions</strong></div>
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; background: #ffffff; padding: 0.85rem;"><span style="display: block; color: #5e6c84; font-size: 0.8rem;">Read</span><strong>Known space data</strong></div>
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; background: #ffffff; padding: 0.85rem;"><span style="display: block; color: #5e6c84; font-size: 0.8rem;">Answer</span><strong>Results plus timestamp</strong></div>
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; background: #ffffff; padding: 0.85rem;"><span style="display: block; color: #5e6c84; font-size: 0.8rem;">Refresh</span><strong>Only after confirmation</strong></div>
 </div>
-<div style="flex: 1 1 140px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.75rem; color: #5e6c84; margin-bottom: 0.35rem;">Read</div>
-<strong style="font-size: 0.9rem;">Cached MuleSight snapshots</strong>
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem;">
+<span style="border-radius: 999px; background: #e9f2ff; padding: 0.45rem 0.7rem; color: #0747a6;">CloudHub apps</span>
+<span style="border-radius: 999px; background: #e9f2ff; padding: 0.45rem 0.7rem; color: #0747a6;">API Manager APIs</span>
+<span style="border-radius: 999px; background: #e9f2ff; padding: 0.45rem 0.7rem; color: #0747a6;">API security posture</span>
+<span style="border-radius: 999px; background: #e9f2ff; padding: 0.45rem 0.7rem; color: #0747a6;">Exchange endpoints</span>
 </div>
-<div style="flex: 1 1 140px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.75rem; color: #5e6c84; margin-bottom: 0.35rem;">Answer</div>
-<strong style="font-size: 0.9rem;">Results plus timestamp</strong>
-</div>
-<div style="flex: 1 1 140px; min-width: 0; background: #fff; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.85rem;">
-<div style="font-size: 0.75rem; color: #5e6c84; margin-bottom: 0.35rem;">Refresh</div>
-<strong style="font-size: 0.9rem;">Only after confirmation</strong>
-</div>
-</div>
-<div style="margin-top: 0.85rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
-<div style="flex: 1 1 150px; min-width: 0; border-radius: 8px; background: #eaf2ff; padding: 0.75rem; color: #0c3b7a; font-size: 0.86rem;">CloudHub apps</div>
-<div style="flex: 1 1 150px; min-width: 0; border-radius: 8px; background: #ecfdf3; padding: 0.75rem; color: #14532d; font-size: 0.86rem;">API Manager APIs</div>
-<div style="flex: 1 1 150px; min-width: 0; border-radius: 8px; background: #fff7e6; padding: 0.75rem; color: #7a4d00; font-size: 0.86rem;">Exchange endpoints</div>
 </div>
 </div>
 <p><em>MuleSight’s Rovo surface is cache-first: it answers from known space data, reports freshness, and avoids guessing when data is missing.</em></p>

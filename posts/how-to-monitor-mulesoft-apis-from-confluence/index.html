@@ -391,48 +391,12 @@ Updated:
 </ol>
 <p>Each Confluence space has independent configuration, so different teams can connect to different Anypoint organizations or set different sync intervals based on their needs.</p>
 <h2 id="when-to-use-each-monitoring-layer">When to Use Each Monitoring Layer</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0;">
-<div style="flex: 1 1 220px; min-width: 0; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.9rem; background: #fff;">
-<strong style="font-size: 0.9rem;">Snapshot macros</strong>
-<p style="margin: 0.35rem 0; font-size: 0.82rem; color: #5e6c84;">Monitoring specific critical APIs/apps on a dedicated page.</p>
-<span style="font-size: 0.76rem; color: #0c66e4;">On-demand page refresh</span>
-</div>
-<div style="flex: 1 1 220px; min-width: 0; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.9rem; background: #fff;">
-<strong style="font-size: 0.9rem;">Environment Comparison</strong>
-<p style="margin: 0.35rem 0; font-size: 0.82rem; color: #5e6c84;">Pre-release checks, architecture reviews, and incident investigation.</p>
-<span style="font-size: 0.76rem; color: #0c66e4;">On-demand comparison</span>
-</div>
-<div style="flex: 1 1 220px; min-width: 0; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.9rem; background: #fff;">
-<strong style="font-size: 0.9rem;">Ops Dashboard</strong>
-<p style="margin: 0.35rem 0; font-size: 0.82rem; color: #5e6c84;">Continuous drift detection across all environments.</p>
-<span style="font-size: 0.76rem; color: #0c66e4;">Scheduled checks</span>
-</div>
-<div style="flex: 1 1 220px; min-width: 0; border: 1px solid #dfe7f2; border-radius: 8px; padding: 0.9rem; background: #fff;">
-<strong style="font-size: 0.9rem;">Rovo agent</strong>
-<p style="margin: 0.35rem 0; font-size: 0.82rem; color: #5e6c84;">Ad-hoc questions about inventory and status.</p>
-<span style="font-size: 0.76rem; color: #0c66e4;">Conversational</span>
-</div>
-</div>
-<div style="display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
-<div style="flex: 1; min-width: 150px; border-bottom: 3px solid #28a745; padding: 0.8rem; background: #f0faf3; border-radius: 8px 8px 0 0; text-align: center;">
-<div style="font-size: 0.75rem; text-transform: uppercase; color: #28a745; letter-spacing: 0.06em;">Layer 1</div>
-<div style="font-size: 0.88rem; font-weight: 600;">Snapshots</div>
-<div style="font-size: 0.75rem; color: #6b7a8d;">On-demand</div>
-</div>
-<div style="flex: 1; min-width: 150px; border-bottom: 3px solid #0d6efd; padding: 0.8rem; background: #f0f6ff; border-radius: 8px 8px 0 0; text-align: center;">
-<div style="font-size: 0.75rem; text-transform: uppercase; color: #0d6efd; letter-spacing: 0.06em;">Layer 2</div>
-<div style="font-size: 0.88rem; font-weight: 600;">Comparison</div>
-<div style="font-size: 0.75rem; color: #6b7a8d;">Pre-release</div>
-</div>
-<div style="flex: 1; min-width: 150px; border-bottom: 3px solid #ffc107; padding: 0.8rem; background: #fffcf0; border-radius: 8px 8px 0 0; text-align: center;">
-<div style="font-size: 0.75rem; text-transform: uppercase; color: #856404; letter-spacing: 0.06em;">Layer 3</div>
-<div style="font-size: 0.88rem; font-weight: 600;">Automated Ops</div>
-<div style="font-size: 0.75rem; color: #6b7a8d;">Continuous</div>
-</div>
-<div style="flex: 1; min-width: 150px; border-bottom: 3px solid #6f42c1; padding: 0.8rem; background: #f5f0ff; border-radius: 8px 8px 0 0; text-align: center;">
-<div style="font-size: 0.75rem; text-transform: uppercase; color: #6f42c1; letter-spacing: 0.06em;">Bonus</div>
-<div style="font-size: 0.88rem; font-weight: 600;">Rovo AI</div>
-<div style="font-size: 0.75rem; color: #6b7a8d;">Conversational</div>
+<div style="margin: 2rem 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.75rem;">
+<div style="border: 1px solid #dfe7f2; border-top: 4px solid #36b37e; border-radius: 8px; padding: 0.9rem; background: #ffffff;"><span style="display: block; color: #5e6c84; font-size: 0.78rem;">Layer 1</span><strong>Snapshot macros</strong><p style="margin: 0.35rem 0 0; color: #44546f;">Focused, on-demand checks for specific APIs and apps.</p></div>
+<div style="border: 1px solid #dfe7f2; border-top: 4px solid #0052cc; border-radius: 8px; padding: 0.9rem; background: #ffffff;"><span style="display: block; color: #5e6c84; font-size: 0.78rem;">Layer 2</span><strong>Environment Comparison</strong><p style="margin: 0.35rem 0 0; color: #44546f;">Pre-release checks, architecture reviews, and incident investigation.</p></div>
+<div style="border: 1px solid #dfe7f2; border-top: 4px solid #ffab00; border-radius: 8px; padding: 0.9rem; background: #ffffff;"><span style="display: block; color: #5e6c84; font-size: 0.78rem;">Layer 3</span><strong>Ops Dashboard</strong><p style="margin: 0.35rem 0 0; color: #44546f;">Continuous drift detection and Confluence notifications.</p></div>
+<div style="border: 1px solid #dfe7f2; border-top: 4px solid #6554c0; border-radius: 8px; padding: 0.9rem; background: #ffffff;"><span style="display: block; color: #5e6c84; font-size: 0.78rem;">Bonus</span><strong>Rovo agent</strong><p style="margin: 0.35rem 0 0; color: #44546f;">Ad-hoc questions about inventory, status, and freshness.</p></div>
 </div>
 </div>
 <p>Most teams start with snapshot macros on a few key pages, graduate to the Environment Comparison dashboard for release processes, and then enable the Ops Dashboard for continuous automated monitoring.</p>

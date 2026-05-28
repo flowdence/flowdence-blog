@@ -313,21 +313,23 @@ About
 <p><strong>On-call engineers</strong> responding to incidents need to see deployment status and configuration for affected services quickly. If the runbook references a service and the engineer cannot verify its current state without logging into Anypoint, incident resolution slows down.</p>
 <p><strong>New team members</strong> onboarding onto a project need to understand the integration topology. Telling them to “check Anypoint” assumes they have access, training, and context they do not yet have.</p>
 <p>In each of these cases, the information already exists in Anypoint Platform. The problem is getting it to the people who need it, in the place where they already work.</p>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;">
-<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">📋</div>
-<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Product Managers</div>
-<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need deployment status and version info for release planning</p>
+<div style="margin: 2rem 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem;">
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; padding: 1rem; background: #ffffff;">
+<strong style="display: block; margin-bottom: 0.75rem; font-size: 1rem;">Who needs the data</strong>
+<p style="margin: 0 0 0.75rem;"><strong>Product:</strong> deployment status and version context for release planning.</p>
+<p style="margin: 0 0 0.75rem;"><strong>Security:</strong> policy coverage, tiers, and contracts across environments.</p>
+<p style="margin: 0;"><strong>On-call:</strong> current deployment state in incident runbooks.</p>
 </div>
-<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">🔒</div>
-<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">Security &#x26; Compliance</div>
-<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need policy coverage and security posture across environments</p>
+<div style="border: 1px solid #dfe7f2; border-radius: 8px; padding: 1rem; background: #ffffff;">
+<strong style="display: block; margin-bottom: 0.75rem; font-size: 1rem;">Where MuleSight surfaces it</strong>
+<ul style="margin: 0; padding-left: 1.25rem;">
+<li>Snapshot macros for specific Anypoint resources</li>
+<li>Environment Comparison for side-by-side drift review</li>
+<li>API Security Posture for policy and contract audits</li>
+<li>Ops Dashboard and Rovo agent for follow-up workflows</li>
+</ul>
 </div>
-<div style="border: 1px solid #d7dde7; border-radius: 12px; padding: 1rem; background: #f8f9fb; text-align: center;">
-<div style="font-size: 1.4rem; margin-bottom: 0.3rem;">🚨</div>
-<div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">On-Call Engineers</div>
-<p style="margin: 0; font-size: 0.78rem; color: #6b7a8d;">Need live deployment state in runbooks during incident response</p>
 </div>
 </div>
 <h2 id="confluence-as-the-visibility-layer">Confluence as the Visibility Layer</h2>
