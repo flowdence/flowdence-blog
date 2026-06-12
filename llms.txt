@@ -12,6 +12,32 @@
 ## Related product docs
 - https://flowdence.io/docs/
 
+## Products
+### ApprovalFlow for Confluence
+- Product page: https://flowdence.io/products/approvalflow
+- Docs: https://flowdence.io/docs/approvalflow/docs/
+- Marketplace: https://marketplace.atlassian.com/apps/2350565795/approvalflow-for-confluence
+- Core topics: Confluence approval workflows, content governance, version-aware approvals, audit trails, workflow analytics, Change Sets, and approval APIs.
+
+### MuleSight for Confluence
+- Product page: https://flowdence.io/products/mulesight
+- Docs: https://flowdence.io/docs/mulesight/docs/
+- Marketplace: https://marketplace.atlassian.com/apps/970479047/mulesight-for-confluence
+- Core topics: MuleSoft Anypoint snapshots in Confluence, environment drift detection, API security posture, diagnostics, operational dashboards, macros, and Rovo answers.
+
+### GrafanaSight for Confluence
+- Product page: https://flowdence.io/products/grafanasight
+- Docs: https://flowdence.io/docs/grafanasight/docs/
+- Marketplace: https://marketplace.atlassian.com/apps/2643908494/grafanasight-for-confluence
+- Core topics: Grafana Cloud observability in Confluence, panel snapshots, dashboard context, alert visibility, annotation timelines, runbooks, incident reviews, and the GrafanaSight Specialist Rovo agent.
+
+### BoomiSight for Confluence
+- Product page: https://flowdence.io/products/boomisight
+- Docs: https://flowdence.io/docs/boomisight/docs/
+- Marketplace: https://marketplace.atlassian.com/apps/2126489539/boomisight-for-confluence
+- Core topics: Boomi operational visibility in Confluence, environment comparison, execution monitoring, API governance, connector inventory, deployment drift, release evidence, and Boomi runbook macros.
+
+
 ## Latest posts
 - [Confluence Cloud Document Governance Tools: Compliance Checklist](https://flowdence.io/blog/posts/confluence-content-governance-checklist) — A practical checklist for evaluating Confluence Cloud document governance tools, including approval workflows, audit trails, version control, and access policies.
 - [How to Monitor MuleSoft Anypoint APIs from Confluence with MuleSight](https://flowdence.io/blog/posts/how-to-monitor-mulesoft-apis-from-confluence) — MuleSoft Anypoint monitoring in Confluence with MuleSight: set up API snapshots, environment comparison, drift detection, and scheduled incident pages.
@@ -19,8 +45,8 @@
 - [How to Embed Grafana Dashboards in Confluence Without Screenshots](https://flowdence.io/blog/posts/stop-screenshotting-grafana-dashboards) — Learn how to embed Grafana dashboards in Confluence without stale screenshots. GrafanaSight converts Grafana panel and dashboard URLs into refreshable Confluence macros.
 - [Confluence Page Approval Workflow Guide (2026)](https://flowdence.io/blog/posts/the-complete-guide-to-confluence-approval-workflows) — Everything you need to know about a Confluence page approval workflow. Compare native options, Marketplace apps, and compliant multi-step approvals with version tracking and audit…
 - [From Dashboard to Documentation: GrafanaSight](https://flowdence.io/blog/posts/from-dashboard-to-documentation-grafanasight-for-platform-teams) — Platform teams maintain dashboards in Grafana and docs in Confluence. GrafanaSight bridges the gap with live panels, alert tables, and a browsable library.
-- [Incident Postmortems with Live Grafana Data](https://flowdence.io/blog/posts/incident-postmortems-with-live-grafana-data-in-confluence) — Incident postmortems rely on stale Grafana screenshots. GrafanaSight embeds live panels, alert timelines, and AI-generated summaries directly in Confluence.
 - [Grafana Alerts in Confluence: Service Health](https://flowdence.io/blog/posts/grafana-alerts-in-confluence-real-time-service-health) — Surface Grafana Cloud alert status directly in Confluence runbooks and status pages with GrafanaSight — no Grafana login required for readers.
+- [Incident Postmortems with Live Grafana Data](https://flowdence.io/blog/posts/incident-postmortems-with-live-grafana-data-in-confluence) — Incident postmortems rely on stale Grafana screenshots. GrafanaSight embeds live panels, alert timelines, and AI-generated summaries directly in Confluence.
 - [Why Forge-Native Matters for Observability Apps](https://flowdence.io/blog/posts/why-forge-native-matters-for-observability-apps) — Forge-native observability apps run on Atlassian infrastructure with declared egress, encrypted storage, and no external servers. Here is why that matters.
 - [How MuleSight Surfaces Integration Failures Before They Escalate](https://flowdence.io/blog/posts/mulesight-surfaces-integration-failures) — MuleSight brings MuleSoft Anypoint visibility into Confluence with drift detection, environment comparison, and scheduled incident pages — so integration failures surface before t…
 - [Your MuleSoft Documentation Is Already Stale](https://flowdence.io/blog/posts/your-mulesoft-documentation-is-already-stale) — MuleSoft API documentation goes stale the moment you hit publish. Here is why that happens, what it costs your team, and how to fix it with live Confluence macros.
