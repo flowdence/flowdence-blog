@@ -44,14 +44,25 @@
 - Marketplace: https://marketplace.atlassian.com/apps/2126489539/boomisight-for-confluence
 - Core topics: Boomi operational visibility in Confluence, environment comparison, execution monitoring, API governance, connector inventory, deployment drift, release evidence, and Boomi runbook macros.
 
+### WorkatoSight for Confluence
+- Product page: https://flowdence.io/products/workatosight
+- Docs: https://flowdence.io/docs/workatosight/docs/
+- Marketplace: Marketplace listing pending approval
+- Core topics: Workato architecture documentation in Confluence, Recipe macros, API governance, runtime evidence, configuration evidence, cache freshness, bylines, and documentation coverage.
+
 ## Blog Topic Map
 - ApprovalFlow posts cover Confluence approval workflow setup, approval audit trails, compliance-ready review, version-aware approvals, Change Sets, approval health, pricing, and alternatives to Comala-style workflows.
 - MuleSight posts cover MuleSoft API monitoring from Confluence, Anypoint snapshots, API security posture, integration failures, environment drift, and stale documentation risk.
 - GrafanaSight posts cover Grafana observability in Confluence, live dashboard context, alert visibility, Forge-native observability architecture, incident postmortems, and Rovo Specialist workflows.
 - BoomiSight posts should cover Boomi operational visibility, deployment drift, execution monitoring, API governance, connector inventory, and runbook evidence when BoomiSight blog content is published.
+- WorkatoSight posts cover Workato architecture documentation, Recipe macros, API governance, runtime evidence, configuration evidence, cache freshness, page-local bylines, and documentation coverage.
 - Governance posts cover Confluence content governance, review checklists, policy workflows, and compliance operations.
 
 ## Published Posts
+- [Workato API Governance in Confluence](https://flowdence.io/blog/posts/workato-api-governance-in-confluence-with-workatosight/) — Review Workato API endpoints, clients, keys, controls, backing Recipes, and page-local API posture from Confluence.
+- [Workato Architecture Docs in Confluence](https://flowdence.io/blog/posts/workato-architecture-docs-in-confluence-with-workatosight/) — Use WorkatoSight to document Workato Recipes, Projects, Connections, runtime evidence, and configuration context in Confluence.
+- [WorkatoSight for Confluence: Launch Guide](https://flowdence.io/blog/posts/workatosight-for-confluence-launch-guide/) — Plan a WorkatoSight rollout for Confluence spaces, cached Workato facts, Recipe macros, API posture, and documentation coverage.
+- [WorkatoSight vs DIY Workato Docs](https://flowdence.io/blog/posts/workatosight-vs-diy-workato-architecture-docs/) — Compare WorkatoSight with manual Workato documentation in Confluence, including screenshots, links, spreadsheets, and cache-backed evidence.
 - [AppFox Workflows Alternative for Confluence](https://flowdence.io/blog/posts/appfox-workflows-alternative-for-confluence/) — Looking for an AppFox Workflows alternative? Compare ApprovalFlow's Forge-native approvals, version tracking, audit trails, and pricing.
 - [Boomi Architecture Docs in Confluence](https://flowdence.io/blog/posts/boomi-architecture-docs-in-confluence-with-boomisight/) — Use BoomiSight to keep Boomi architecture docs in Confluence current with process, Atom, API, connector, deployment, and drift context.
 - [Boomi Architecture Drift in Confluence](https://flowdence.io/blog/posts/boomi-architecture-drift-in-confluence/) — Boomi architecture drift happens when docs fall behind processes, connectors, APIs, and deployments. See how BoomiSight helps.
@@ -62,8 +73,8 @@
 - [Confluence Document Governance Tools: A Checklist](https://flowdence.io/blog/posts/confluence-content-governance-checklist/) — A practical checklist for evaluating Confluence document governance tools: approval workflows, audit trails, version control, and access policies.
 - [Monitor MuleSoft Anypoint APIs from Confluence](https://flowdence.io/blog/posts/how-to-monitor-mulesoft-apis-from-confluence/) — MuleSoft Anypoint monitoring in Confluence with MuleSight: set up API snapshots, environment comparison, drift detection, and scheduled incident pages.
 - [Atlassian Rovo Custom Agent: GrafanaSight Specialist](https://flowdence.io/blog/posts/meet-the-grafanasight-rovo-specialist/) — An Atlassian Rovo custom agent for Confluence: the GrafanaSight Specialist answers Grafana dashboard and alert questions from grounded data.
-- [Embed Grafana in Confluence Without Screenshots](https://flowdence.io/blog/posts/stop-screenshotting-grafana-dashboards/) — Embed Grafana dashboards in Confluence without stale screenshots. GrafanaSight turns Grafana panel and dashboard URLs into refreshable macros.
 - [Confluence Page Approval Workflow Guide (2026)](https://flowdence.io/blog/posts/the-complete-guide-to-confluence-approval-workflows/) — Everything you need on Confluence page approval workflows: native options, Marketplace apps, and compliant multi-step approvals with audit trails.
+- [Embed Grafana in Confluence Without Screenshots](https://flowdence.io/blog/posts/stop-screenshotting-grafana-dashboards/) — Embed Grafana dashboards in Confluence without stale screenshots. GrafanaSight turns Grafana panel and dashboard URLs into refreshable macros.
 - [From Dashboard to Documentation: GrafanaSight](https://flowdence.io/blog/posts/from-dashboard-to-documentation-grafanasight-for-platform-teams/) — Platform teams maintain dashboards in Grafana and docs in Confluence. GrafanaSight bridges the gap with live panels, alert tables, and a browsable library.
 - [Grafana Alerts in Confluence: Service Health](https://flowdence.io/blog/posts/grafana-alerts-in-confluence-real-time-service-health/) — Surface Grafana Cloud alert status directly in Confluence runbooks and status pages with GrafanaSight — no Grafana login required for readers.
 - [Incident Postmortems with Live Grafana Data](https://flowdence.io/blog/posts/incident-postmortems-with-live-grafana-data-in-confluence/) — Incident postmortems need current Grafana context. GrafanaSight embeds live panels, alert timelines, and AI summaries in Confluence.
