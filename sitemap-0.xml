@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url>
 <loc>https://flowdence.io/blog/</loc>
-<lastmod>2026-07-25T00:00:00.000Z</lastmod>
+<lastmod>2026-10-21T08:46:08.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/about/</loc>
@@ -18,7 +18,7 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/approvalflow-vs-comala-vs-appfox/</loc>
-<lastmod>2026-02-24T00:00:00.000Z</lastmod>
+<lastmod>2026-10-21T08:46:08.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/boomi-architecture-docs-in-confluence-with-boomisight/</loc>
@@ -118,7 +118,7 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/the-complete-guide-to-confluence-approval-workflows/</loc>
-<lastmod>2026-06-10T00:00:00.000Z</lastmod>
+<lastmod>2026-10-21T08:46:08.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/tracking-approval-health-in-confluence/</loc>
@@ -126,7 +126,7 @@
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/version-aware-approvals-in-confluence/</loc>
-<lastmod>2026-03-19T00:00:00.000Z</lastmod>
+<lastmod>2026-10-21T08:46:08.000Z</lastmod>
 </url>
 <url>
 <loc>https://flowdence.io/blog/posts/why-forge-native-matters-for-observability-apps/</loc>
